@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 // import useWindowDimensions from '../../Common/WindowDimension';
 import { Link } from 'react-router-dom';
 import PmcvData from '../../PmcvData';
@@ -10,9 +10,14 @@ import {
 
 const Index = () => {
   // const { height } = useWindowDimensions();
+
   const homeElements = PmcvData.filter(
     (items) => items.name === 'home info'
   )[0];
+
+  useEffect(() => {
+    document.title = 'Home';
+  }, []);
   return (
     <main className="home is-flex is-column is-align-center is-center">
       <div className="home-profile ">
@@ -28,11 +33,7 @@ const Index = () => {
               <IoArrowDownCircleOutline />
               <span>Download CV</span>
             </button>
-            <Link
-              to="/contact"
-              className="is-btn is-btn_secondary is-gap-10"
-              target="_blank"
-            >
+            <Link to="/contact" className="is-btn is-btn_secondary is-gap-10">
               <IoChatbubbleEllipsesOutline />
               <span>Let's Chat</span>
             </Link>

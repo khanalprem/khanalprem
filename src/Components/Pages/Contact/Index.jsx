@@ -1,17 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { IoCloseCircleOutline } from 'react-icons/io5';
 import PmcvData from '../../PmcvData';
 import ContactCard from '../../Common/ContactCard';
+import { Link } from 'react-router-dom';
 
 const Index = () => {
+  const [toggle, setToggle] = useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
+  const toggleClose = () => {
+    setToggle(false);
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('name', name);
-    console.log('email', email);
-    console.log('message', message);
+    setToggle(true);
+    fetch('https://formspree.io/f/xbjwnkkw', {
+      method: 'POST',
+      body: JSON.stringify({ name: name, email: email, message: message }),
+    });
     setName('');
     setEmail('');
     setMessage('');
@@ -20,6 +29,10 @@ const Index = () => {
   const contactElements = PmcvData.filter(
     (items) => items.name === 'contact'
   )[0];
+
+  useEffect(() => {
+    document.title = 'Contact';
+  }, []);
 
   return (
     <main className="contact-page">
@@ -74,6 +87,33 @@ const Index = () => {
                 <span>submit</span>
               </button>
             </form>
+          </div>
+        </div>
+
+        <div className={toggle ? 'pm-modal pm-modal_show' : 'pm-modal'}>
+          <div className="pm-modal_cntr pm-modal_cntr_sm">
+            <div className="pm-modal_close" onClick={() => toggleClose()}>
+              <IoCloseCircleOutline />
+            </div>
+
+            <div className="pm-modal_body">
+              <div className="is-flex is-center is-column is-align-center is-text-center mt-15">
+                <h3>Thank you for getting in touch! </h3>
+                <div className="cotent mt-20">
+                  <p className="mb-20">
+                    I have received your message and would like to thank you for
+                    writing to me.I will reply by email as soon as possible.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="pm-modal_footer is-flex is-center is-align-center">
+              <Link to="/">
+                <button className="is-btn is-btn_primary">
+                  <span>Back to Home</span>
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

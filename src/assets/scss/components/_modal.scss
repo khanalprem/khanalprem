@@ -117,6 +117,13 @@
       ('web', 'ms', 'moz', 'o')
     );
     cursor: pointer;
+    svg{
+      height: 2rem;
+      width: 2rem;
+      &:hover{
+        color:var(--clr-primary-500)
+      }
+    }
 
     
     &.is-border {

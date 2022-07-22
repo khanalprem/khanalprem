@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PmcvData from '../../PmcvData';
 import ContactCard from '../../Common/ContactCard';
 import Skills from '../../Common/Skills';
 
 const Index = () => {
   const aboutElements = PmcvData.filter((items) => items.name === 'about')[0];
+
+  useEffect(() => {
+    document.title = 'About';
+  }, []);
+
   return (
     <main className="about-page">
       <div className="about-page_title mb-30">

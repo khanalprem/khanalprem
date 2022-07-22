@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PmcvData from '../../PmcvData';
 import Tab from '../../Common/Tab';
 import TabContent from './TabContent';
@@ -6,6 +6,7 @@ const Index = () => {
   const [state, setState] = useState({ hidden: false, active: 'all' });
   const tabElements = PmcvData.filter((items) => items.name === 'tab')[0];
   const resumeElements = PmcvData.filter((items) => items.name === 'resume')[0];
+
   const tabContentAll = tabElements.tabContent.filter(
     (items) =>
       items.type === 'web' ||
@@ -21,6 +22,10 @@ const Index = () => {
   const tabContentWordpress = tabElements.tabContent.filter(
     (items) => items.type === 'wordpress'
   );
+
+  useEffect(() => {
+    document.title = 'Works';
+  }, []);
 
   return (
     <main className="works-page">

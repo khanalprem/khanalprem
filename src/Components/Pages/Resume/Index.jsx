@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PmcvData from '../../PmcvData';
 import EduCard from '../../Common/EduCard';
 import Skills from '../../Common/Skills';
 const Index = () => {
   const resumeElements = PmcvData.filter((items) => items.name === 'resume')[0];
   const aboutElements = PmcvData.filter((items) => items.name === 'about')[0];
+
+  useEffect(() => {
+    document.title = 'Resume';
+  }, []);
   return (
     <main className="resume-page">
       <div className="page_title mb-30">

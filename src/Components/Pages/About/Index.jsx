@@ -2,7 +2,6 @@ import React from 'react';
 import PmcvData from '../../PmcvData';
 import ContactCard from '../../Common/ContactCard';
 import Skills from '../../Common/Skills';
-import profile from '../../../assets/images/profile.jpg';
 
 const Index = () => {
   const aboutElements = PmcvData.filter((items) => items.name === 'about')[0];

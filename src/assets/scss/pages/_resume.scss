@@ -1,0 +1,23 @@
+.grid-cols_3{
+    display: grid;
+    gap:1.5rem;
+    grid-template-columns: 1fr;
+    @include breakpoint-up('xl-phone'){
+        grid-template-columns: repeat(2,1fr); 
+    }
+    @include breakpoint-up('lg-tab'){
+        grid-template-columns: repeat(3,1fr); 
+    }
+}
+.education{
+    .pm-card{
+        background-color: var(--clr-primary-50);
+        @include radius(12px);
+    }
+}
+.experience{
+    .pm-card{
+        background-color: var(--clr-purple-50);
+        @include radius(12px);
+    }
+}

@@ -1,0 +1,90 @@
+.slick-dots {
+  bottom: 20px !important;
+}
+
+
+
+.slick-arrow{
+  width: 40px;
+  height: 40px;
+  @include radius(50%);
+  background-color: var(--clr-primary-500);
+  z-index: 9;
+  @include flexbox();
+  @include justify-content(center);
+  @include align-items(center);
+  @include flex-direction(column);
+  &::after{
+    content:'';
+    position: absolute;
+    top:30%;
+    
+    width: 15px;
+    height: 15px;
+    border-top: 2px solid var(--clr-white-900);
+    border-right: 2px solid var(--clr-white-900);
+  }
+  &.slick-next{
+    &::after{
+      @include prefix (transform,rotate(45deg),(webkit, moz, ms, o));
+      margin-right: .34rem;
+    }
+  }
+  &.slick-prev{
+    &::after{
+      @include prefix (transform,rotate(-135deg),(webkit, moz, ms, o));
+      margin-left:.5rem;
+    }
+  }
+}
+
+.slick-arrow:hover,
+.slick-arrow:focus {
+  background-color: var(--clr-primary-700);
+}
+
+.slick-next:before,
+.slick-prev:before {
+  display: none;
+}
+
+.slick-next {
+  right: 1rem;
+}
+
+.slick-prev {
+  left: 1rem;
+}
+
+@include breakpoint-up('md-tab') {
+  .slick-prev {
+    left: 4%;
+  }
+
+  .slick-next {
+    right: 4%;
+  }
+}
+
+.nextprev {
+  @include flex-value(0 0 28px);
+  max-width: 28px;
+  width: 28px;
+  height: 28px;
+  @include flexbox();
+  @include justify-content(center);
+  @include align-items(center);
+  @include flex-direction(column);
+  background-color: var(--clr-white-900);
+  @include box-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
+  border: 2px solid var(--clr-body-300);
+  @include radius(50%);
+  color: var(--primary-300);
+  cursor: pointer;
+  i {
+    font-size: 1.1rem;
+  }
+  &:hover {
+    background-color: var(--primary-100);
+  }
+}

@@ -1,0 +1,28 @@
+
+.header{
+  padding-top:2rem;
+  &-wrap{
+    .pm-logo{
+      figure{
+        position: relative;
+        overflow: hidden;
+        width: 40px;
+        height: 40px;
+        border:2px solid var(--clr-body-300);
+        @include radius(100%);
+        img{
+          width: 100%;
+          @include radius(100%);
+          object-fit: cover;
+        }
+      }
+      span{
+        text-transform: uppercase;
+        color:var(--clr-body-900);
+        font-family: (--ff-hd)
+      }
+    }
+  }
+}
+@import 'menu';
+

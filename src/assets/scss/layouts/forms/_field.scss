@@ -117,6 +117,7 @@ textarea {
     padding: 0.375rem 0.75rem;
     line-height: 1.5;
     border-radius: 5px;
+    color:var(--clr-body);
     background-color: transparent;
     background-clip: padding-box;
     border: 1px solid var(--clr-body-300);
@@ -214,6 +215,7 @@ textarea {
   height: calc(1.8em + 0.75rem + 2px);
   overflow: hidden;
   border-radius: 6px;
+
 
   input {
     flex-grow: 1;

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PmcvData from '../../PmcvData';
 import Tab from '../../Common/Tab';
 import TabContent from './TabContent';
+
 const Index = () => {
   const [state, setState] = useState({ hidden: false, active: 'all' });
   const tabElements = PmcvData.filter((items) => items.name === 'tab')[0];
@@ -10,17 +11,20 @@ const Index = () => {
   const tabContentAll = tabElements.tabContent.filter(
     (items) =>
       items.type === 'web' ||
+      items.type === 'web react' ||
       items.type === 'react' ||
-      items.type === 'wordpress'
+      items.type === 'wordpress' ||
+      items.type === 'web wordpress'
   );
+
   const tabContentWeb = tabElements.tabContent.filter(
-    (items) => items.type === 'web'
+    (items) => items.type === 'web react' || items.type === 'web'
   );
   const tabContentReact = tabElements.tabContent.filter(
-    (items) => items.type === 'react'
+    (items) => items.type === 'web react' || items.type === 'react'
   );
   const tabContentWordpress = tabElements.tabContent.filter(
-    (items) => items.type === 'wordpress'
+    (items) => items.type === 'wordpress' || items.type === 'web wordpress'
   );
 
   useEffect(() => {
@@ -45,6 +49,7 @@ const Index = () => {
         </ul>
         <div className="pm-tab-content mt-30">
           {state.active === 'all' && <TabContent tabData={tabContentAll} />}
+
           {state.active === 'web design' && (
             <TabContent tabData={tabContentWeb} />
           )}

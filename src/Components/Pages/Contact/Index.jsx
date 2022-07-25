@@ -6,24 +6,29 @@ import { Link } from 'react-router-dom';
 
 const Index = () => {
   const [toggle, setToggle] = useState(false);
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [state, setState] = useState({ name: '', email: '', message: '' });
 
   const toggleClose = () => {
     setToggle(false);
   };
+  const onChange = (event) => {
+    const { name, value } = event.target;
+    setState({ ...state, [name]: value });
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (state.name === '' || state.email === '' || state.message === '') return;
+
     setToggle(true);
     fetch('https://formspree.io/f/xbjwnkkw', {
       method: 'POST',
-      body: JSON.stringify({ name: name, email: email, message: message }),
+      body: JSON.stringify({
+        name: state.name,
+        email: state.email,
+        message: state.message,
+      }),
     });
-    setName('');
-    setEmail('');
-    setMessage('');
   };
 
   const contactElements = PmcvData.filter(
@@ -54,8 +59,8 @@ const Index = () => {
                     name="name"
                     placholder="name"
                     className="pm-control"
-                    value={name}
-                    onChange={(event) => setName(event.target.value)}
+                    value={state.name}
+                    onChange={onChange}
                   />
                 </div>
                 <div className="pm-group is-grow">
@@ -65,8 +70,8 @@ const Index = () => {
                     placholder="name"
                     className="pm-control"
                     name="email"
-                    value={email}
-                    onChange={(event) => setEmail(event.target.value)}
+                    value={state.email}
+                    onChange={onChange}
                   />
                 </div>
               </div>
@@ -79,8 +84,8 @@ const Index = () => {
                   className="pm-control"
                   name="message"
                   rows={5}
-                  value={message}
-                  onChange={(event) => setMessage(event.target.value)}
+                  value={state.message}
+                  onChange={onChange}
                 ></textarea>
               </div>
               <button type="submit" className="is-btn is-btn_primary">

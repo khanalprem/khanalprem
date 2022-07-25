@@ -1,24 +1,26 @@
 {
   "files": {
-    "main.css": "/static/css/main.b470e3cb.css",
-    "main.js": "/static/js/main.e085587e.js",
+    "main.css": "/static/css/main.c1003d11.css",
+    "main.js": "/static/js/main.2da4b348.js",
     "static/js/787.fec5082f.chunk.js": "/static/js/787.fec5082f.chunk.js",
     "static/media/ZITE.png": "/static/media/ZITE.fc2eaf329adb4c1cf3a0.png",
     "static/media/geonadir.png": "/static/media/geonadir.efbf7d3b23f999133f62.png",
     "static/media/geodetic.png": "/static/media/geodetic.2c25ef991eca2262ddef.png",
     "static/media/geoportal_update.png": "/static/media/geoportal_update.aa5a1809c75ecac4bd60.png",
     "static/media/pdra.png": "/static/media/pdra.fbbc8db4d9ac73153acd.png",
+    "static/media/stunning-preview.jpg": "/static/media/stunning-preview.1d023bedd94ac190436c.jpg",
     "static/media/about-cv.jpg": "/static/media/about-cv.52d73f1e8d40efdf4358.jpg",
     "static/media/fieldsight.png": "/static/media/fieldsight.f3d0cdfb791d2c36591b.png",
+    "static/media/dashy-preview.jpg": "/static/media/dashy-preview.fb150d416ecf95560db5.jpg",
     "static/media/sakchyam.png": "/static/media/sakchyam.c707015805ab55acf1f1.png",
     "static/media/profile.jpg": "/static/media/profile.067cf65474eb78dbe20b.jpg",
     "index.html": "/index.html",
-    "main.b470e3cb.css.map": "/static/css/main.b470e3cb.css.map",
-    "main.e085587e.js.map": "/static/js/main.e085587e.js.map",
+    "main.c1003d11.css.map": "/static/css/main.c1003d11.css.map",
+    "main.2da4b348.js.map": "/static/js/main.2da4b348.js.map",
     "787.fec5082f.chunk.js.map": "/static/js/787.fec5082f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b470e3cb.css",
-    "static/js/main.e085587e.js"
+    "static/css/main.c1003d11.css",
+    "static/js/main.2da4b348.js"
   ]
 }

@@ -9,7 +9,9 @@ const Skills = () => {
         <div className="contact-card is-flex is-align-center is-start is-gap-15 mb-15">
           <div className="is-square is-square_sm">{items.icon}</div>
           <div className="personal-card-content">
-            <p className="fs-md mb-05 is-capitalize">{items.iconName}</p>
+            <p className=" mb-05 is-capitalize fw-600 fs-lg">
+              {items.iconName}
+            </p>
           </div>
         </div>
       ))}

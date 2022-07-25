@@ -75,3 +75,10 @@
         }
     }
 }
+.dark{
+    .tab-item{
+        .works-card{
+            @include box-shadow(0 2px 6px rgba(255,255,255,.2));
+        }
+    }
+}

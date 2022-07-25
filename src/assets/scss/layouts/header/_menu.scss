@@ -52,14 +52,15 @@ nav{
     height: 0;
     background-color: var(--clr-white-900);
     border-radius: 8px;
-    padding:.45rem .5rem;
+    
+    
     svg{
         height: 1.5rem;
         width: 1.5rem;
         
     }
     @include breakpoint-down("lg-tab"){
-        
+        padding:.45rem .5rem;
         visibility: visible;
         opacity: 1;
         width: auto;
@@ -69,6 +70,13 @@ nav{
     
 }
 .menu{
+    .switch-button{
+        background-color: var(--clr-white-900);
+        svg{
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+    }
     nav{
        
   

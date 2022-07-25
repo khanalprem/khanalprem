@@ -2,7 +2,7 @@ import React from 'react';
 import PmcvData from '../PmcvData';
 
 const ContactCard = () => {
-  const cardElements = PmcvData.filter((items) => items.name === 'about')[0];
+  const cardElements = PmcvData.filter((items) => items.name === 'about me')[0];
   return (
     <div className="grid grid-cols_2">
       {cardElements.contactCard.map((items) => (

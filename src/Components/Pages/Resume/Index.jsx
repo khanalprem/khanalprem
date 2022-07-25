@@ -4,7 +4,9 @@ import EduCard from '../../Common/EduCard';
 import Skills from '../../Common/Skills';
 const Index = () => {
   const resumeElements = PmcvData.filter((items) => items.name === 'resume')[0];
-  const aboutElements = PmcvData.filter((items) => items.name === 'about')[0];
+  const aboutElements = PmcvData.filter(
+    (items) => items.name === 'about me'
+  )[0];
 
   useEffect(() => {
     document.title = 'Resume';

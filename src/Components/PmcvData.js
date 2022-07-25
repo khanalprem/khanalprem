@@ -33,6 +33,8 @@ import Sakshyam from '../assets/images/sakchyam.png';
 import Zite from '../assets/images/ZITE.png';
 import Pdra from '../assets/images/pdra.png';
 import Geonadir from '../assets/images/geonadir.png';
+import Dashypro from '../assets/images/dashy-preview.jpg';
+import Stunning from '../assets/images/stunning-preview.jpg';
 
 const PmcvData = [
   {
@@ -104,16 +106,16 @@ const PmcvData = [
 
   {
     id: 4,
-    name: 'about',
+    name: 'about me',
     img: aboutImg,
-    title: 'who am i?',
+    title: 'who am I?',
     infoTitle: 'Personal Info',
     skillsTitle: 'Skills',
     desc: [
       {
         id: 1,
         content:
-          'Hi! I am a Sr. Web Designer  with more than 8 years of experience designing intriguing interface for web. Building state-of-the-art , easy to use , user-friendly websites is truly a passion of mine .  I enjoy turning complex problems into simple, beautiful and intuitive designs.',
+          'Hi! I am a Sr. Frontend Developer  with more than 8 years of experience designing intriguing interface for web. Building state-of-the-art , easy to use , user-friendly websites is truly a passion of mine .  I enjoy turning complex problems into simple, beautiful and intuitive designs.',
       },
       {
         id: 2,
@@ -308,37 +310,49 @@ const PmcvData = [
         id: 2,
         img: Zite,
         name: 'Remote Management and Planning Platform',
-        type: 'web',
+        type: 'web react',
       },
       {
         id: 3,
         img: Geodetic,
         name: 'Geodetic Division, Survey Department',
-        type: 'react',
+        type: 'web react',
       },
       {
         id: 4,
         img: Geoportal,
         name: 'Update And Upgrade Of National Geoportal',
-        type: 'wordpress',
+        type: 'web react ',
       },
       {
         id: 5,
         img: Sakshyam,
         name: 'Sakchyam Data Visualization Tool',
-        type: 'web',
+        type: 'web react',
       },
       {
         id: 6,
         img: Geonadir,
         name: 'To Store And Share Drone Datasets',
-        type: 'react',
+        type: 'web react',
       },
       {
         id: 7,
         img: Pdra,
         name: 'Disaster Risk Assessment (PDRA) Tool',
-        type: 'web',
+        type: 'web react',
+      },
+      {
+        id: 8,
+        img: Dashypro,
+        name: 'Dashy  Pro is a premium WordPress theme',
+        type: 'web wordpress',
+      },
+      {
+        id: 9,
+        img: Stunning,
+        name: 'Stunning is a premium WordPress theme',
+        type: 'web wordpress',
       },
     ],
   },

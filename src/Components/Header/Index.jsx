@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { IoMenu, IoCloseCircleOutline } from 'react-icons/io5';
 import Menu from './Menu';
 import logo from '../../assets/images/profile.jpg';
+import ThemeSwitcher from '../Common/ThemeSwitcher';
 import PmcvData from '../PmcvData';
 
 const Index = () => {
@@ -29,12 +30,12 @@ const Index = () => {
           <div
             className={
               !state.active
-                ? 'is-flex is-end is-align-center menu'
+                ? 'is-flex is-end is-align-center menu is-gap-15'
                 : 'is-flex is-end is-align-center menu menu_active'
             }
           >
             <nav className="is-grow">
-              <div className="is-flex is-end is-align-center toggle-menu_close mb-10">
+              <div className="is-flex is-end is-align-center toggle-menu_close ">
                 <div
                   className="toggle-menu  is-flex is-center is-column is-align-center"
                   onClick={() => {
@@ -57,13 +58,16 @@ const Index = () => {
                 ))}
               </ul>
             </nav>
-            <div
-              className="toggle-menu is-flex is-center is-column is-align-center"
-              onClick={() => {
-                toggleClass('active', !state.active);
-              }}
-            >
-              {!state.active ? <IoMenu /> : <IoCloseCircleOutline />}
+            <div className="is-flex is-end is-align-center is-gap-15">
+              <ThemeSwitcher />
+              <div
+                className="toggle-menu is-flex is-center is-column is-align-center"
+                onClick={() => {
+                  toggleClass('active', !state.active);
+                }}
+              >
+                {!state.active ? <IoMenu /> : <IoCloseCircleOutline />}
+              </div>
             </div>
           </div>
         </div>

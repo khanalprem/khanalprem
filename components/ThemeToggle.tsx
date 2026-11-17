@@ -44,7 +44,7 @@ export default function ThemeToggle() {
       ref={buttonRef}
       type="button"
       onClick={toggle}
-      className="grid size-11 place-items-center rounded-full border border-line transition-colors hover:border-ink"
+      className="icon-button"
     >
       <span className="sr-only">{theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}</span>
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

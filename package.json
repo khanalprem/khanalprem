@@ -10,8 +10,7 @@
     "preview": "npx serve docs"
   },
   "dependencies": {
-    "@fontsource-variable/bricolage-grotesque": "^5.3.0",
-    "@fontsource-variable/instrument-sans": "^5.3.0",
+    "@fontsource-variable/ibm-plex-sans": "^5.3.0",
     "next": "^16.4.6",
     "react": "^19.3.1",
     "react-dom": "^19.3.1"

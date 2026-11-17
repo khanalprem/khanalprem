@@ -35,14 +35,15 @@ export const about = [
   'From 2022 to 2026 I was a senior software engineer at Danphe Software Labs, working with the US company Fluid, where I built Liquid themes for its platform. Today I am the CEO of Nepse Flow Pvt. Ltd. and build products for Nepal across the whole stack: NepseFlow for investors, GharGuru for home services, Pasalghar for online selling and KhelSpot for sports venues. I still care most about the same thing: taking a complicated problem and making the screen in front of it simple.',
 ];
 
-export type WorkKind = 'React' | 'WordPress' | 'Web';
+export type WorkKind = 'React' | 'Liquid' | 'WordPress' | 'Web';
 
 export type Work = {
   slug: string;
   title: string;
   summary: string;
   kind: WorkKind;
-  image: { src: string; width: number; height: number };
+  /** Screenshot in public/work/. Without one, the card shows the title in large type. */
+  image?: { src: string; width: number; height: number };
   /** Optional link to the live project. Leave out if there isn't one. */
   href?: string;
 };
@@ -55,6 +56,22 @@ export const work: Work[] = [
       'Update and upgrade of Nepal’s national geoportal, the Survey Department’s clearinghouse for spatial data.',
     kind: 'React',
     image: { src: '/work/geoportal.webp', width: 1400, height: 659 },
+  },
+  {
+    slug: 'yoli',
+    title: 'Yoli',
+    summary:
+      'Liquid storefront theme for Yoli, a nutritional supplements brand. Built with the team at Fluid.',
+    kind: 'Liquid',
+    href: 'https://yoli.com/',
+  },
+  {
+    slug: 'make-wellness',
+    title: 'MAKE Wellness',
+    summary:
+      'Liquid theme for MAKE Wellness, a peptide supplements and skincare brand. Built with the team at Fluid.',
+    kind: 'Liquid',
+    href: 'https://meet.makewellness.com/?referral=MAKEshop',
   },
   {
     slug: 'fieldsight',

@@ -460,6 +460,23 @@ dialog[open]::backdrop {
   }
 }
 
+/* Work cards without a screenshot show the project name instead. */
+.title-tile-name {
+  font-size: clamp(2.2rem, 5.5vw, 4.25rem);
+  font-variation-settings: 'wdth' 80;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  transition:
+    transform 0.6s var(--ease-out),
+    color 0.3s;
+}
+@media (hover: hover) {
+  .title-tile:hover .title-tile-name {
+    transform: scale(1.06);
+    color: var(--accent);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .contour-line {
     animation: none;

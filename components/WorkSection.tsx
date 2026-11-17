@@ -28,7 +28,7 @@ export default function WorkSection() {
           <Reveal className="max-w-2xl">
             <h2 className="section-title">Client work I’ve shipped</h2>
             <p className="mt-4 text-lg text-muted">
-              Mostly interfaces for maps and data, built with teams in Nepal for government, development and
+              Interfaces for maps and data, and storefront themes, built with teams for government, development and
               commercial clients.
             </p>
           </Reveal>
@@ -51,24 +51,39 @@ export default function WorkSection() {
         <ul className="mt-12 grid gap-x-8 gap-y-14 md:grid-cols-2">
           {visible.map((item, i) => {
             const lead = i === 0 && filter === 'All';
+            const image = item.image;
             return (
               <Reveal as="li" key={item.slug} delay={lead ? 0 : (i % 2) * 110} className={lead ? 'md:col-span-2' : ''}>
                 <article className={lead ? 'grid gap-6 md:grid-cols-[1.7fr_1fr] md:items-end md:gap-10' : undefined}>
-                  <button
-                    type="button"
-                    onClick={() => openItem(item)}
-                    className="shot group block w-full overflow-hidden border border-line bg-surface text-left transition-colors hover:border-ink"
-                  >
-                    <span className="sr-only">View a larger screenshot of {item.title}</span>
-                    <Image
-                      src={item.image.src}
-                      alt=""
-                      width={item.image.width}
-                      height={item.image.height}
-                      sizes={lead ? '(min-width: 768px) 60vw, 100vw' : '(min-width: 768px) 45vw, 100vw'}
-                      className="aspect-[16/10] w-full object-cover object-left-top transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-                    />
-                  </button>
+                  {image ? (
+                    <button
+                      type="button"
+                      onClick={() => openItem(item)}
+                      className="shot group block w-full overflow-hidden border border-line bg-surface text-left transition-colors hover:border-ink"
+                    >
+                      <span className="sr-only">View a larger screenshot of {item.title}</span>
+                      <Image
+                        src={image.src}
+                        alt=""
+                        width={image.width}
+                        height={image.height}
+                        sizes={lead ? '(min-width: 768px) 60vw, 100vw' : '(min-width: 768px) 45vw, 100vw'}
+                        className="aspect-[16/10] w-full object-cover object-left-top transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                      />
+                    </button>
+                  ) : (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="shot title-tile group grid aspect-[16/10] w-full place-items-center border border-line bg-surface transition-colors hover:border-ink"
+                    >
+                      <span className="sr-only">Visit the {item.title} site</span>
+                      <span aria-hidden="true" className="title-tile-name font-display font-bold">
+                        {item.title}
+                      </span>
+                    </a>
+                  )}
                   <div className={lead ? '' : 'mt-5'}>
                     <h3 className={lead ? 'text-3xl font-semibold md:text-4xl' : 'text-2xl font-semibold'}>
                       {item.title}
@@ -110,13 +125,15 @@ export default function WorkSection() {
                 Close
               </button>
             </div>
-            <Image
-              src={selected.image.src}
-              alt={`Screenshot of ${selected.title}`}
-              width={selected.image.width}
-              height={selected.image.height}
-              className="max-h-[78vh] w-full object-contain"
-            />
+            {selected.image && (
+              <Image
+                src={selected.image.src}
+                alt={`Screenshot of ${selected.title}`}
+                width={selected.image.width}
+                height={selected.image.height}
+                className="max-h-[78vh] w-full object-contain"
+              />
+            )}
           </div>
         )}
       </dialog>

@@ -10,9 +10,9 @@ export const site = {
   role: 'CEO of Nepse Flow Pvt. Ltd.',
   company: { name: 'Nepse Flow Pvt. Ltd.', product: 'NepseFlow', href: 'https://nepseflow.com' },
   description:
-    'Prem Prasad Khanal is the CEO of Nepse Flow Pvt. Ltd. and the maker of NepseFlow, GharGuru, Pasalghar and KhelSpot. He has built for the web from Nepal since 2013.',
+    'Prem Prasad Khanal is the CEO of Nepse Flow Pvt. Ltd., a Ruby on Rails and full-stack engineer, and the maker of NepseFlow, BankBI, GharGuru, Pasalghar and KhelSpot. He has built for the web from Nepal since 2013.',
   intro:
-    'I run Nepse Flow Pvt. Ltd., where I build NepseFlow, a market intelligence platform for Nepal’s stock market. I have been making products for the web since 2013, from national map portals to marketplaces.',
+    'I run Nepse Flow Pvt. Ltd., where I build NepseFlow, a market intelligence platform for Nepal’s stock market built on Ruby on Rails and Next.js. I have been making products for the web since 2013, from national map portals to marketplaces.',
   location: {
     label: 'Syangja, Nepal',
     coordinates: '28.10° N, 83.87° E',
@@ -32,7 +32,7 @@ export const site = {
 
 export const about = [
   'I started as a frontend developer in 2013 and spent most of the years since at Naxa and other Nepali companies, turning dense data into interfaces people can read: maps, survey records, drone imagery, disaster-risk plans.',
-  'From 2022 to 2026 I was a senior software engineer at Danphe Software Labs, working with the US company Fluid, where I built Liquid themes for its platform. Today I am the CEO of Nepse Flow Pvt. Ltd. and build products for Nepal across the whole stack: NepseFlow for investors, GharGuru for home services, Pasalghar for online selling and KhelSpot for sports venues. I still care most about the same thing: taking a complicated problem and making the screen in front of it simple.',
+  'From 2022 to 2026 I was a senior software engineer at Danphe Software Labs, working with the US company Fluid, where I built Liquid themes for its platform. Today I am the CEO of Nepse Flow Pvt. Ltd. and work as a full-stack engineer. On the server I build with Ruby on Rails and Django: NepseFlow for investors and BankBI for banking analytics run on Rails, while GharGuru, Pasalghar and KhelSpot run on Django. I still care most about the same thing: taking a complicated problem and making the screen in front of it simple.',
 ];
 
 export type WorkKind = 'React' | 'Liquid' | 'WordPress' | 'Web';
@@ -133,6 +133,8 @@ export type Product = {
   summary: string;
   /** What the product is, in two or three words. */
   kind: string;
+  /** Main technologies, shown under the summary. */
+  stack: string[];
   /** Shown beside the name, e.g. a role. Optional. */
   note?: string;
   /** Public link. Leave out until the product is live. */
@@ -147,30 +149,42 @@ export const products: Product[] = [
     note: 'CEO',
     summary:
       'Live market data, a stock screener, portfolio tracking, broker flow and charting for investors in Nepal’s stock market.',
+    stack: ['Ruby on Rails', 'Next.js', 'PostgreSQL', 'React Native'],
     href: 'https://nepseflow.com',
+  },
+  {
+    name: 'BankBI',
+    kind: 'Banking analytics',
+    summary:
+      'A business intelligence platform for banks in Nepal: dashboards and pivot explorers over transactions, loans and deposits.',
+    stack: ['Ruby on Rails', 'Next.js', 'PostgreSQL'],
   },
   {
     name: 'GharGuru',
     kind: 'Home services marketplace',
     summary:
       'Customers post a household job, from plumbing to cleaning, and verified providers nearby take it on.',
+    stack: ['Django', 'Next.js', 'React Native'],
   },
   {
     name: 'Pasalghar',
     kind: 'Multi-vendor marketplace',
     summary:
       'Online selling for Nepal with zero commission on sales, in English and Nepali.',
+    stack: ['Django', 'Next.js', 'React Native'],
   },
   {
     name: 'KhelSpot',
     kind: 'Sports venue booking',
     summary: 'Find a venue, book a slot and play, with management tools for the venue’s desk.',
+    stack: ['Django', 'Next.js', 'React Native'],
   },
   {
     name: 'Dashy',
     kind: 'WordPress blog theme',
     summary:
       'A clean blog theme with masonry, grid and list layouts, for personal, magazine and lifestyle blogs.',
+    stack: ['WordPress', 'PHP'],
     href: 'https://wordpress.org/themes/dashy/',
   },
   {
@@ -178,6 +192,7 @@ export const products: Product[] = [
     kind: 'Premium WordPress theme',
     summary:
       'The premium edition of Dashy: Gutenberg-ready, set up through the live customizer, with WooCommerce support.',
+    stack: ['WordPress', 'PHP'],
   },
 ];
 
@@ -209,7 +224,7 @@ export const toolkit = [
   },
   {
     group: 'Server',
-    items: ['Django', 'Django REST Framework', 'Ruby on Rails', 'PostgreSQL', 'Celery', 'Redis', 'Django Channels'],
+    items: ['Ruby on Rails', 'Django', 'Django REST Framework', 'PostgreSQL', 'Celery', 'Redis', 'Django Channels'],
   },
   { group: 'Mobile', items: ['React Native', 'Expo'] },
   { group: 'Design and CMS', items: ['Figma', 'Adobe XD', 'WordPress'] },

@@ -4,50 +4,49 @@
 5:I[37457,["$3"],"default"]
 6:"/_next/static/chunks/3zt_16xndew4w.js"
 7:I[22016,["$3","$6"],""]
-10:"ViewportBoundary"
-11:I[97367,["$3"],"$10"]
-12:"MetadataBoundary"
+e:I[97367,["$3"],"OutletBoundary"]
+f:"$Sreact.suspense"
+12:"ViewportBoundary"
 13:I[97367,["$3"],"$12"]
-14:"$Sreact.suspense"
+14:"MetadataBoundary"
+15:I[97367,["$3"],"$14"]
 :HL["/_next/static/chunks/2isqn5thp-s4c.css","style"]
-2:T61c,{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://premkhanal.com.np/#website","url":"https://premkhanal.com.np","name":"Prem Prasad Khanal","inLanguage":"en","publisher":{"@id":"https://premkhanal.com.np/#person"}},{"@type":"ProfilePage","@id":"https://premkhanal.com.np/#profile","url":"https://premkhanal.com.np","name":"Prem Prasad Khanal, Founder and CEO of Nepse Flow Pvt. Ltd.","description":"Prem Prasad Khanal is the founder and CEO of Nepse Flow Pvt. Ltd. and a full-stack engineer who turns ideas into products: NepseFlow for investors, BankBI for banks, and the Pasalghar, GharGuru and KhelSpot marketplaces. On the web since 2013.","isPartOf":{"@id":"https://premkhanal.com.np/#website"},"mainEntity":{"@id":"https://premkhanal.com.np/#person"}},{"@type":"Person","@id":"https://premkhanal.com.np/#person","name":"Prem Prasad Khanal","alternateName":"Prem Khanal","url":"https://premkhanal.com.np","jobTitle":"Founder and Chief Executive Officer","worksFor":{"@type":"Organization","name":"Nepse Flow Pvt. Ltd.","url":"https://nepseflow.com"},"email":"mailto:khnl.prem@gmail.com","image":"https://premkhanal.com.np/images/prem.webp","address":{"@type":"PostalAddress","addressLocality":"Syangja","addressCountry":"NP"},"knowsAbout":["Product engineering, end to end","Financial and market data","Applied AI","Data interfaces and maps","Marketplaces and payments","Product strategy"],"sameAs":["https://www.linkedin.com/in/prem-prasad-khanal-6115b115a/","https://github.com/khanalprem","https://www.facebook.com/khnl.prem"]}]}9:X
+2:T623,{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://premkhanal.com.np/#website","url":"https://premkhanal.com.np","name":"Prem Prasad Khanal","inLanguage":"en","publisher":{"@id":"https://premkhanal.com.np/#person"}},{"@type":"ProfilePage","@id":"https://premkhanal.com.np/#profile","url":"https://premkhanal.com.np","name":"Prem Prasad Khanal, Founder and CEO of Nepse Flow Pvt. Ltd.","description":"Prem Prasad Khanal is the founder and CEO of Nepse Flow Pvt. Ltd. and a full-stack and AI engineer who turns ideas into products: NepseFlow for investors, BankBI for banks, and the Pasalghar, GharGuru and KhelSpot marketplaces. On the web since 2013.","isPartOf":{"@id":"https://premkhanal.com.np/#website"},"mainEntity":{"@id":"https://premkhanal.com.np/#person"}},{"@type":"Person","@id":"https://premkhanal.com.np/#person","name":"Prem Prasad Khanal","alternateName":"Prem Khanal","url":"https://premkhanal.com.np","jobTitle":"Founder and Chief Executive Officer","worksFor":{"@type":"Organization","name":"Nepse Flow Pvt. Ltd.","url":"https://nepseflow.com"},"email":"mailto:khnl.prem@gmail.com","image":"https://premkhanal.com.np/images/prem.webp","address":{"@type":"PostalAddress","addressLocality":"Syangja","addressCountry":"NP"},"knowsAbout":["Product engineering, end to end","Financial and market data","Applied AI","Data interfaces and maps","Marketplaces and payments","Product strategy"],"sameAs":["https://www.linkedin.com/in/prem-prasad-khanal-6115b115a/","https://github.com/khanalprem","https://www.facebook.com/khnl.prem"]}]}9:X
 c:X
 c:C
-d:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$1","c",{"children":[["$","main",null,{"id":"main","className":"shell flex min-h-svh flex-col items-start justify-center gap-6","children":[["$","h1",null,{"className":"section-title","children":"This page is off the map."}],["$","p",null,{"className":"lead","children":"The address doesn’t match anything on this site."}],["$","$L7",null,{"href":"/","className":"btn btn-primary","children":"Go to the home page"}]]}],[["$","script","script-0",{"src":"/_next/static/chunks/3zt_16xndew4w.js","async":true}]],"$Le"]}],"p":"$@f","v":null,"s":"$9"}}]]
+d:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$1","c",{"children":[["$","main",null,{"id":"main","className":"shell flex min-h-svh flex-col items-start justify-center gap-6","children":[["$","h1",null,{"className":"section-title","children":"This page is off the map."}],["$","p",null,{"className":"lead","children":"The address doesn’t match anything on this site."}],["$","$L7",null,{"href":"/","className":"btn btn-primary","children":"Go to the home page"}]]}],[["$","script","script-0",{"src":"/_next/static/chunks/3zt_16xndew4w.js","async":true}]],["$","$Le",null,{"children":["$","$f",null,{"name":"Next.MetadataOutlet","children":"$@10"}]}]]}],"p":"$@11","v":null,"s":"$9"}}]]
 a:[["children",{"s":"/_not-found","h":96,"d":{"r":["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","template":["$","$L5",null,{}]}]]}],"p":"$@b","v":"$c","s":"$9"},"c":"$Qd"}]]
-0:{"t":{"t":{"s":"","h":80,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/2isqn5thp-s4c.css","precedence":"next"}],["$","script","script-0",{"src":"/_next/static/chunks/3qfy96eoyh-ek.js","async":true}]],["$","html",null,{"lang":"en","className":"QOnjxW_variable","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark'){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.dataset.theme=t}catch(e){}document.documentElement.classList.add('js')})()"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],["$","body",null,{"children":[["$","a",null,{"href":"#main","className":"sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-[0.7rem] focus:bg-ink focus:px-4 focus:py-2 focus:text-bg","children":"Skip to content"}],["$","$L4",null,{"parallelRouterKey":"children","template":["$","$L5",null,{}],"notFound":[["$","main",null,{"id":"main","className":"shell flex min-h-svh flex-col items-start justify-center gap-6","children":[["$","h1",null,{"className":"section-title","children":"This page is off the map."}],["$","p",null,{"className":"lead","children":"The address doesn’t match anything on this site."}],["$","$L7",null,{"href":"/","className":"btn btn-primary","children":"Go to the home page"}]]}],[]]}]]}]]}]]}],"p":"$@8","v":null,"s":"$9"},"c":"$Qa"},"h":{"r":["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L11",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#f4f6f9","media":"(prefers-color-scheme: light)"}],["$","meta","3",{"name":"theme-color","content":"#090f1b","media":"(prefers-color-scheme: dark)"}]]}],["$","$L13",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$14",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Prem Prasad Khanal, Founder and CEO of Nepse Flow Pvt. Ltd."}],["$","meta","1",{"name":"description","content":"Prem Prasad Khanal is the founder and CEO of Nepse Flow Pvt. Ltd. and a full-stack engineer who turns ideas into products: NepseFlow for investors, BankBI for banks, and the Pasalghar, GharGuru and KhelSpot marketplaces. On the web since 2013."}],"$L15","$L16","$L17","$L18","$L19","$L1a","$L1b","$L1c","$L1d","$L1e","$L1f","$L20","$L21","$L22","$L23","$L24","$L25","$L26","$L27","$L28","$L29","$L2a"]}]}],null]}],"$L2b"]}],"p":"$@2c","v":null,"s":"$9"}},"a":"$@2d","u":"$@2e","b":"ZCnZZDW_dBTT1GbHf9WFY"}
-2f:I[97367,["$3"],"OutletBoundary"]
-31:I[27201,["$3"],"IconMark"]
-e:["$","$L2f",null,{"children":["$","$14",null,{"name":"Next.MetadataOutlet","children":"$@30"}]}]
-15:["$","link","2",{"rel":"author","href":"https://premkhanal.com.np"}]
-16:["$","meta","3",{"name":"author","content":"Prem Prasad Khanal"}]
-17:["$","meta","4",{"name":"creator","content":"Prem Prasad Khanal"}]
-18:["$","link","5",{"rel":"canonical","href":"https://premkhanal.com.np"}]
-19:["$","meta","6",{"property":"og:title","content":"Prem Prasad Khanal, Founder and CEO of Nepse Flow Pvt. Ltd."}]
-1a:["$","meta","7",{"property":"og:description","content":"Prem Prasad Khanal is the founder and CEO of Nepse Flow Pvt. Ltd. and a full-stack engineer who turns ideas into products: NepseFlow for investors, BankBI for banks, and the Pasalghar, GharGuru and KhelSpot marketplaces. On the web since 2013."}]
-1b:["$","meta","8",{"property":"og:url","content":"https://premkhanal.com.np"}]
-1c:["$","meta","9",{"property":"og:site_name","content":"Prem Prasad Khanal"}]
-1d:["$","meta","10",{"property":"og:locale","content":"en_US"}]
-1e:["$","meta","11",{"property":"og:image","content":"https://premkhanal.com.np/og.png"}]
-1f:["$","meta","12",{"property":"og:image:width","content":"1200"}]
-20:["$","meta","13",{"property":"og:image:height","content":"630"}]
-21:["$","meta","14",{"property":"og:image:alt","content":"Prem Prasad Khanal: I turn ideas into products that make an impact."}]
-22:["$","meta","15",{"property":"og:type","content":"profile"}]
-23:["$","meta","16",{"name":"twitter:card","content":"summary_large_image"}]
-24:["$","meta","17",{"name":"twitter:title","content":"Prem Prasad Khanal, Founder and CEO of Nepse Flow Pvt. Ltd."}]
-25:["$","meta","18",{"name":"twitter:description","content":"Prem Prasad Khanal is the founder and CEO of Nepse Flow Pvt. Ltd. and a full-stack engineer who turns ideas into products: NepseFlow for investors, BankBI for banks, and the Pasalghar, GharGuru and KhelSpot marketplaces. On the web since 2013."}]
-26:["$","meta","19",{"name":"twitter:image","content":"https://premkhanal.com.np/og.png"}]
-27:["$","link","20",{"rel":"icon","href":"/icon.svg","type":"image/svg+xml"}]
-28:["$","link","21",{"rel":"icon","href":"/favicon.ico"}]
-29:["$","link","22",{"rel":"apple-touch-icon","href":"/apple-touch-icon.png"}]
-2a:["$","$L31","23",{}]
-2b:["$","meta",null,{"name":"next-size-adjust","content":""}]
+0:{"t":{"t":{"s":"","h":80,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/2isqn5thp-s4c.css","precedence":"next"}],["$","script","script-0",{"src":"/_next/static/chunks/3qfy96eoyh-ek.js","async":true}]],["$","html",null,{"lang":"en","data-theme":"dark","className":"QOnjxW_variable","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(function(){try{if(localStorage.getItem('theme')==='light')document.documentElement.dataset.theme='light'}catch(e){}document.documentElement.classList.add('js')})()"}}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],["$","body",null,{"children":[["$","a",null,{"href":"#main","className":"sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-[0.7rem] focus:bg-ink focus:px-4 focus:py-2 focus:text-bg","children":"Skip to content"}],["$","$L4",null,{"parallelRouterKey":"children","template":["$","$L5",null,{}],"notFound":[["$","main",null,{"id":"main","className":"shell flex min-h-svh flex-col items-start justify-center gap-6","children":[["$","h1",null,{"className":"section-title","children":"This page is off the map."}],["$","p",null,{"className":"lead","children":"The address doesn’t match anything on this site."}],["$","$L7",null,{"href":"/","className":"btn btn-primary","children":"Go to the home page"}]]}],[]]}]]}]]}]]}],"p":"$@8","v":null,"s":"$9"},"c":"$Qa"},"h":{"r":["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L13",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#090f1b"}]]}],["$","$L15",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$f",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Prem Prasad Khanal, Founder and CEO of Nepse Flow Pvt. Ltd."}],["$","meta","1",{"name":"description","content":"Prem Prasad Khanal is the founder and CEO of Nepse Flow Pvt. Ltd. and a full-stack and AI engineer who turns ideas into products: NepseFlow for investors, BankBI for banks, and the Pasalghar, GharGuru and KhelSpot marketplaces. On the web since 2013."}],"$L16","$L17","$L18","$L19","$L1a","$L1b","$L1c","$L1d","$L1e","$L1f","$L20","$L21","$L22","$L23","$L24","$L25","$L26","$L27","$L28","$L29","$L2a","$L2b"]}]}],null]}],"$L2c"]}],"p":"$@2d","v":null,"s":"$9"}},"a":"$@2e","u":"$@2f","b":"-yWRWShFmH8zeMSa2X_4C"}
+30:I[27201,["$3"],"IconMark"]
+10:null
+16:["$","link","2",{"rel":"author","href":"https://premkhanal.com.np"}]
+17:["$","meta","3",{"name":"author","content":"Prem Prasad Khanal"}]
+18:["$","meta","4",{"name":"creator","content":"Prem Prasad Khanal"}]
+19:["$","link","5",{"rel":"canonical","href":"https://premkhanal.com.np"}]
+1a:["$","meta","6",{"property":"og:title","content":"Prem Prasad Khanal, Founder and CEO of Nepse Flow Pvt. Ltd."}]
+1b:["$","meta","7",{"property":"og:description","content":"Prem Prasad Khanal is the founder and CEO of Nepse Flow Pvt. Ltd. and a full-stack and AI engineer who turns ideas into products: NepseFlow for investors, BankBI for banks, and the Pasalghar, GharGuru and KhelSpot marketplaces. On the web since 2013."}]
+1c:["$","meta","8",{"property":"og:url","content":"https://premkhanal.com.np"}]
+1d:["$","meta","9",{"property":"og:site_name","content":"Prem Prasad Khanal"}]
+1e:["$","meta","10",{"property":"og:locale","content":"en_US"}]
+1f:["$","meta","11",{"property":"og:image","content":"https://premkhanal.com.np/og.png"}]
+20:["$","meta","12",{"property":"og:image:width","content":"1200"}]
+21:["$","meta","13",{"property":"og:image:height","content":"630"}]
+22:["$","meta","14",{"property":"og:image:alt","content":"Prem Prasad Khanal: I turn ideas into products that make an impact."}]
+23:["$","meta","15",{"property":"og:type","content":"profile"}]
+24:["$","meta","16",{"name":"twitter:card","content":"summary_large_image"}]
+25:["$","meta","17",{"name":"twitter:title","content":"Prem Prasad Khanal, Founder and CEO of Nepse Flow Pvt. Ltd."}]
+26:["$","meta","18",{"name":"twitter:description","content":"Prem Prasad Khanal is the founder and CEO of Nepse Flow Pvt. Ltd. and a full-stack and AI engineer who turns ideas into products: NepseFlow for investors, BankBI for banks, and the Pasalghar, GharGuru and KhelSpot marketplaces. On the web since 2013."}]
+27:["$","meta","19",{"name":"twitter:image","content":"https://premkhanal.com.np/og.png"}]
+28:["$","link","20",{"rel":"icon","href":"/icon.svg","type":"image/svg+xml"}]
+29:["$","link","21",{"rel":"icon","href":"/favicon.ico"}]
+2a:["$","link","22",{"rel":"apple-touch-icon","href":"/apple-touch-icon.png"}]
+2b:["$","$L30","23",{}]
+2c:["$","meta",null,{"name":"next-size-adjust","content":""}]
 9:300
-30:null
-2e:true
+2f:true
 9:C
-2d:0
+2e:0
 b:"$undefined"
 8:"$undefined"
-2c:"$undefined"
-f:"$undefined"
+2d:"$undefined"
+11:"$undefined"

@@ -1,32 +1,45 @@
 @import 'tailwindcss';
 
 /*
-  Palette: a survey sheet by day, a night map after dark.
-  The accent is laligurans (rhododendron) red; "water" is the blue used for links.
+  Palette: the hills at first light by day, at dusk after dark.
+  Ink is a deep blue and the accent is laligurans (rhododendron) crimson,
+  the two colours of Nepal's flag. Blue is kept for links and focus.
 */
 :root {
-  --bg: #f2f5f1;
+  --bg: #f4f6f9;
   --surface: #ffffff;
-  --ink: #10221e;
-  --muted: #51645d;
-  --line: #cad6ce;
-  --contour: #a3b9ac;
+  --ink: #0d1626;
+  --muted: #55617a;
+  --line: #d8dee8;
+  --line-strong: #b4bfd0;
   --accent: #c4174f;
+  --accent-strong: #a31041;
   --on-accent: #ffffff;
-  --water: #1b5880;
+  --link: #1c4e96;
+  --danger: #b3261e;
+  --ridge: #5d7699;
+  --snow: #ffffff;
+  --shadow: 0 1px 2px rgb(13 22 38 / 0.06), 0 18px 40px -18px rgb(13 22 38 / 0.28);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --gutter: clamp(1.25rem, 4vw, 3rem);
   color-scheme: light;
 }
 
 [data-theme='dark'] {
-  --bg: #0c1b1a;
-  --surface: #122624;
-  --ink: #e4eee8;
-  --muted: #93a8a0;
-  --line: #25423d;
-  --contour: #2c544c;
+  --bg: #090f1b;
+  --surface: #101828;
+  --ink: #e7ecf4;
+  --muted: #94a1b8;
+  --line: #1e293d;
+  --line-strong: #33425e;
   --accent: #ff6b93;
+  --accent-strong: #ff8aa9;
   --on-accent: #1a0710;
-  --water: #7cc4ee;
+  --link: #8fbcf5;
+  --danger: #ff8a80;
+  --ridge: #8ea6cc;
+  --snow: rgb(222 231 246 / 0.78);
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 22px 48px -18px rgb(0 0 0 / 0.7);
   color-scheme: dark;
 }
 
@@ -36,12 +49,12 @@
   --color-ink: var(--ink);
   --color-muted: var(--muted);
   --color-line: var(--line);
-  --color-contour: var(--contour);
+  --color-line-strong: var(--line-strong);
   --color-accent: var(--accent);
   --color-on-accent: var(--on-accent);
-  --color-water: var(--water);
-  --font-display: 'Bricolage Grotesque Variable', 'Arial Narrow', system-ui, sans-serif;
-  --font-sans: 'Instrument Sans Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --color-link: var(--link);
+  --color-danger: var(--danger);
+  --font-sans: var(--font-plex), system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
 
 @layer base {
@@ -49,6 +62,17 @@
     scroll-behavior: smooth;
     scroll-padding-top: 5rem;
     -webkit-text-size-adjust: 100%;
+  }
+  /* Everything is sized in rem, so large monitors get a larger page, not a wider gutter. */
+  @media (min-width: 120rem) {
+    html {
+      font-size: 112.5%;
+    }
+  }
+  @media (min-width: 150rem) {
+    html {
+      font-size: 125%;
+    }
   }
 
   body {
@@ -60,12 +84,13 @@
     -webkit-font-smoothing: antialiased;
   }
 
+  /* One family throughout; headings use its condensed width. */
   h1,
   h2,
   h3 {
-    font-family: var(--font-display);
-    font-variation-settings: 'wdth' 88;
-    letter-spacing: -0.02em;
+    font-stretch: 85%;
+    font-weight: 500;
+    letter-spacing: -0.025em;
     line-height: 1.05;
     text-wrap: balance;
   }
@@ -75,9 +100,9 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--accent);
+    outline: 2px solid var(--link);
     outline-offset: 3px;
-    border-radius: 2px;
+    border-radius: 3px;
   }
 
   ::selection {
@@ -86,28 +111,44 @@
   }
 
   dialog::backdrop {
-    background: rgb(6 16 15 / 0.78);
+    background: rgb(5 9 17 / 0.8);
+  }
+  dialog:focus-visible {
+    outline: none;
   }
 }
 
 @layer components {
   .shell {
     width: 100%;
-    max-width: 76rem;
+    max-width: 78rem;
     margin-inline: auto;
-    padding-inline: clamp(1.25rem, 4vw, 3rem);
+    padding-inline: var(--gutter);
+  }
+
+  .section {
+    padding-block: clamp(4.5rem, 9vw, 8rem);
+    border-top: 1px solid var(--line);
   }
 
   .section-title {
-    font-size: clamp(2rem, 4.6vw, 3.5rem);
-    font-weight: 650;
+    font-size: clamp(2.125rem, 4.4vw, 3.75rem);
+    letter-spacing: -0.035em;
+    line-height: 1;
+  }
+
+  .lead {
+    font-size: clamp(1.125rem, 1.4vw, 1.3125rem);
+    line-height: 1.55;
+    color: var(--muted);
   }
 
   .text-link {
-    color: var(--water);
+    color: var(--link);
     text-decoration: underline;
     text-decoration-thickness: 1px;
-    text-underline-offset: 0.2em;
+    text-underline-offset: 0.22em;
+    transition: color 0.2s;
   }
   .text-link:hover {
     color: var(--accent);
@@ -117,17 +158,24 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 0.6rem;
     min-height: 3rem;
-    padding: 0.7rem 1.4rem;
-    border-radius: 999px;
-    border: 1.5px solid var(--ink);
-    font-weight: 600;
+    padding: 0.7rem 1.3rem;
+    border: 1px solid var(--line-strong);
+    border-radius: 0.7rem;
+    font-weight: 500;
     line-height: 1.2;
-    transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+    transition:
+      background-color 0.2s,
+      color 0.2s,
+      border-color 0.2s,
+      transform 0.35s var(--ease-out);
   }
   .btn:hover {
-    background: var(--ink);
-    color: var(--bg);
+    border-color: var(--ink);
+  }
+  .btn:active {
+    transform: scale(0.97);
   }
   .btn-primary {
     background: var(--accent);
@@ -135,63 +183,396 @@
     color: var(--on-accent);
   }
   .btn-primary:hover {
-    background: var(--ink);
-    border-color: var(--ink);
-    color: var(--bg);
+    background: var(--accent-strong);
+    border-color: var(--accent-strong);
   }
   .btn[disabled] {
-    opacity: 0.6;
+    opacity: 0.65;
     cursor: progress;
+  }
+  .btn svg {
+    flex: none;
+    transition: transform 0.35s var(--ease-out);
   }
 
   .field {
     width: 100%;
     padding: 0.8rem 0.95rem;
     background: var(--surface);
-    border: 1.5px solid var(--line);
-    border-radius: 0.5rem;
+    border: 1px solid var(--line-strong);
+    border-radius: 0.6rem;
     color: var(--ink);
+    transition:
+      border-color 0.2s,
+      box-shadow 0.2s;
   }
   .field:hover {
     border-color: var(--muted);
   }
   .field:focus-visible {
-    outline-offset: 0;
-    border-color: var(--accent);
+    outline: none;
+    border-color: var(--link);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--link) 22%, transparent);
+  }
+  .field[aria-invalid='true'] {
+    border-color: var(--danger);
+  }
+  .field[aria-invalid='true']:focus-visible {
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--danger) 22%, transparent);
   }
 
-  .contours-fade {
-    -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent);
-    mask-image: linear-gradient(to bottom, #000 55%, transparent);
+  /* A screenshot in its frame. */
+  .frame {
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 0.9rem;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+  }
+
+  .icon-button {
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border: 1px solid var(--line);
+    border-radius: 0.7rem;
+    transition:
+      border-color 0.2s,
+      transform 0.35s var(--ease-out);
+  }
+  .icon-button:hover {
+    border-color: var(--ink);
+  }
+  .icon-button:active {
+    transform: scale(0.94);
   }
 }
 
-/* Small pieces of the hero rise into place after the name. */
+/* ------------------------------------------------------------------
+   Header
+   ------------------------------------------------------------------ */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  border-bottom: 1px solid var(--line);
+  background: color-mix(in srgb, var(--bg) 84%, transparent);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4);
+  backdrop-filter: blur(14px) saturate(1.4);
+}
+
+/* The bar under the nav slides to the section on screen. */
+.nav-indicator {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: var(--w, 0);
+  height: 2px;
+  background: var(--accent);
+  opacity: var(--on, 0);
+  transform: translateX(var(--x, 0));
+  transition:
+    transform 0.5s var(--ease-out),
+    width 0.5s var(--ease-out),
+    opacity 0.25s;
+}
+
+/* Positioned from the header, whose backdrop filter contains fixed children. */
+.mobile-nav {
+  position: absolute;
+  inset: 100% 0 auto 0;
+  height: calc(100dvh - 4rem);
+  overflow-y: auto;
+  background: var(--bg);
+  animation: fade-in 0.25s ease-out;
+}
+.mobile-nav li {
+  animation: rise 0.6s var(--ease-out) both;
+  animation-delay: calc(60ms + var(--i) * 45ms);
+}
+
+/* ------------------------------------------------------------------
+   Hero
+   ------------------------------------------------------------------ */
+
+.hero {
+  --ridge-h: clamp(12rem, 30svh, 15rem);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: min(calc(100svh - 4rem), 60rem);
+  overflow: hidden;
+}
+/* On phones the land sits under the text; on wide screens it rises beside it. */
+.hero-content {
+  padding-bottom: calc(var(--ridge-h) * 0.92);
+}
+@media (min-width: 64rem) {
+  .hero {
+    --ridge-h: clamp(19rem, 52svh, 32rem);
+  }
+  .hero-content {
+    padding-bottom: calc(var(--ridge-h) * 0.34);
+  }
+}
+
+.hero-title {
+  max-width: 13em;
+  font-size: clamp(2.375rem, 5.5vw, 5.375rem);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+/* The headline arrives a word at a time, each rising out of its own mask. */
+.word {
+  display: inline-block;
+  overflow: hidden;
+  padding-block: 0.08em 0.14em;
+  margin-block: -0.08em -0.14em;
+  vertical-align: top;
+}
+.word > span {
+  display: inline-block;
+  animation: word-up 0.95s var(--ease-out) both;
+  animation-delay: calc(60ms + var(--i) * 50ms);
+}
+@keyframes word-up {
+  from {
+    transform: translateY(115%);
+  }
+}
+
 @keyframes rise {
   from {
     opacity: 0;
-    transform: translateY(0.4em);
-  }
-  to {
-    opacity: 1;
-    transform: none;
+    transform: translateY(0.75rem);
   }
 }
 .anim-rise {
-  animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation: rise 0.9s var(--ease-out) both;
   animation-delay: var(--delay, 0s);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
+/*
+  Ridgelines: the hills around Syangja drawn as a ridgeline plot. The far
+  layers are smooth terrain; the nearest one is a jagged series, drawn in
+  the accent colour up to a marker for "now".
+*/
+.ridges {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: var(--ridge-h);
+  overflow: hidden;
+  pointer-events: none;
+}
+.ridge-layer {
+  --haze: var(--haze-light);
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: max(100%, 62rem);
+}
+[data-theme='dark'] .ridge-layer {
+  --haze: var(--haze-dark);
+}
+/* The range stands to the right; toward the text it thins out to the open sky. */
+.ridge-layer.is-terrain {
+  -webkit-mask-image: linear-gradient(to right, transparent, rgb(0 0 0 / 0.12) 22%, rgb(0 0 0 / 0.5) 36%, #000 50%);
+  mask-image: linear-gradient(to right, transparent, rgb(0 0 0 / 0.12) 22%, rgb(0 0 0 / 0.5) 36%, #000 50%);
+}
+.ridge-layer > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  animation: ridge-in 1.5s var(--ease-out) both;
+  animation-delay: calc(0.1s + var(--i) * 80ms);
+}
+@keyframes ridge-in {
+  from {
+    opacity: 0;
+    transform: translateY(2.5rem);
   }
-  .anim-rise {
-    animation: none;
+}
+.ridge-signal {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw 2.8s cubic-bezier(0.45, 0, 0.2, 1) 0.75s forwards;
+}
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
   }
-  * {
-    transition-duration: 0.01ms !important;
+}
+.ridge-marker {
+  position: absolute;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin: -0.25rem 0 0 -0.25rem;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: marker-in 0.5s var(--ease-out) 2.9s both;
+}
+.ridge-marker::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid var(--accent);
+  animation: marker-ping 3.2s ease-out 3.3s infinite;
+}
+@keyframes marker-in {
+  from {
+    opacity: 0;
+    transform: scale(0);
   }
+}
+@keyframes marker-ping {
+  from {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  70%,
+  to {
+    opacity: 0;
+    transform: scale(4.5);
+  }
+}
+
+/* ------------------------------------------------------------------
+   Products and client work
+   ------------------------------------------------------------------ */
+
+.flagship-name {
+  font-size: clamp(3rem, 9vw, 7.5rem);
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  line-height: 0.92;
+}
+
+.ext svg {
+  transition: transform 0.3s var(--ease-out);
+}
+@media (hover: hover) {
+  .ext:hover svg {
+    transform: translate(0.15em, -0.15em);
+  }
+  .btn:hover .nudge-down {
+    transform: translateY(0.2em);
+  }
+  .btn:hover .nudge-up {
+    transform: translateY(-0.2em);
+  }
+}
+
+/* Client work: a swipeable rail on phones, a grid from tablets up. */
+.rail {
+  display: flex;
+  gap: 1rem;
+  margin-inline: calc(var(--gutter) * -1);
+  padding-inline: var(--gutter);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-padding-inline: var(--gutter);
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.rail::-webkit-scrollbar {
+  display: none;
+}
+.rail > li {
+  flex: 0 0 min(82%, 22rem);
+  scroll-snap-align: start;
+}
+@media (min-width: 48rem) {
+  .rail {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3rem 2rem;
+    margin-inline: 0;
+    padding-inline: 0;
+    overflow: visible;
+  }
+  .rail > li:first-child {
+    grid-column: span 2;
+  }
+}
+/* Three across, then four across. */
+@media (min-width: 80rem) {
+  .rail {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 3.5rem 1.75rem;
+  }
+  .rail > li,
+  .rail > li:first-child {
+    grid-column: span 3;
+  }
+  .rail > .is-lead,
+  .rail > .is-lead:first-child {
+    grid-column: span 4;
+  }
+}
+
+.work-shot {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 0.7rem;
+  background: var(--surface);
+  text-align: left;
+  transition:
+    border-color 0.25s,
+    box-shadow 0.4s;
+}
+.work-shot img {
+  transition: transform 0.9s var(--ease-out);
+}
+@media (hover: hover) {
+  .work-shot:hover {
+    border-color: var(--line-strong);
+    box-shadow: var(--shadow);
+  }
+  .work-shot:hover img {
+    transform: scale(1.04);
+  }
+}
+
+/* ------------------------------------------------------------------
+   Journey
+   ------------------------------------------------------------------ */
+
+.timeline {
+  position: relative;
+}
+.timeline::before,
+.timeline-fill {
+  content: '';
+  position: absolute;
+  inset: 0.6rem auto 0.6rem 0.25rem;
+  width: 1px;
+  background: var(--line);
+}
+.timeline-fill {
+  display: none;
+  background: var(--accent);
+  transform-origin: top;
+}
+.timeline-dot {
+  position: absolute;
+  top: 0.55rem;
+  left: 0;
+  width: 0.5625rem;
+  height: 0.5625rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  background: var(--bg);
+}
+.timeline-dot.is-current {
+  border-color: var(--accent);
+  background: var(--accent);
 }
 
 /* ------------------------------------------------------------------
@@ -200,75 +581,10 @@
    this file) or without JavaScript the page is simply static.
    ------------------------------------------------------------------ */
 
-:root {
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Hero: the contour lines draw themselves, lowest ground first. */
-.contour-line {
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  animation: draw 2.6s var(--ease-out) forwards;
-  animation-delay: calc(var(--i) * 85ms);
-}
-@keyframes draw {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-/* The accent-coloured copy of the lines follows the cursor. */
-.contour-glow {
-  background-color: var(--accent);
-  opacity: var(--glow, 0);
-  transition: opacity 0.5s;
-  -webkit-mask:
-    url('/images/contours.svg') center / cover no-repeat,
-    radial-gradient(circle 15rem at var(--mx, 50%) var(--my, 50%), #000 0%, transparent 100%);
-  mask:
-    url('/images/contours.svg') center / cover no-repeat,
-    radial-gradient(circle 15rem at var(--mx, 50%) var(--my, 50%), #000 0%, transparent 100%);
-  -webkit-mask-composite: source-in;
-  mask-composite: intersect;
-}
-
-/* Hero: the name arrives one letter at a time. */
-.letter {
-  display: inline-block;
-  transform-origin: 50% 100%;
-  animation: letter 0.9s var(--ease-out) both;
-  animation-delay: calc(0.15s + var(--i) * 38ms);
-}
-@keyframes letter {
-  from {
-    opacity: 0;
-    transform: translateY(0.55em) rotate(7deg) scaleY(1.25);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-/* Hero: the portrait is uncovered from the top, like a print developing. */
-.portrait-frame {
-  animation: uncover 1.2s var(--ease-out) 0.7s both;
-}
-@keyframes uncover {
-  from {
-    clip-path: inset(0 0 100% 0);
-    transform: translateY(1.5rem);
-  }
-  to {
-    clip-path: inset(0);
-    transform: none;
-  }
-}
-
 /* Scroll reveals (see components/Reveal.tsx). */
 .js .reveal {
   opacity: 0;
-  transform: translateY(2rem);
+  transform: translateY(1.25rem);
   transition:
     opacity 0.9s var(--ease-out) var(--d, 0ms),
     transform 0.9s var(--ease-out) var(--d, 0ms);
@@ -278,113 +594,37 @@
   transform: none;
 }
 
-/* Screenshots wipe in from the top once their card is revealed. */
-.js .reveal .shot {
-  clip-path: inset(0 0 100% 0);
-  transition:
-    clip-path 1.1s var(--ease-out) var(--d, 0ms),
-    border-color 0.15s;
-}
-.js .reveal.is-in .shot {
-  clip-path: inset(0);
-}
-
 /* Hairlines above rows draw from left to right. */
 .rule-row {
   position: relative;
-  display: block;
 }
-.rule-row:last-child {
-  border-bottom: 1px solid var(--line);
-}
-.rule {
+.rule-row::before {
+  content: '';
   position: absolute;
   inset: 0 0 auto 0;
   height: 1px;
   background: var(--line);
   transform-origin: left;
 }
-.js .reveal .rule {
+.js .reveal.rule-row::before {
   transform: scaleX(0);
   transition: transform 1.2s var(--ease-out) var(--d, 0ms);
 }
-.js .reveal.is-in .rule {
+.js .reveal.rule-row.is-in::before {
   transform: none;
 }
 
-/* Product rows: the name leans toward the pointer. */
-.product-name {
-  display: block;
-  font-size: clamp(2.6rem, 7.2vw, 5.75rem);
-  font-variation-settings: 'wdth' 82;
-  transition:
-    transform 0.5s var(--ease-out),
-    color 0.3s;
-}
-.product-row {
-  transition: padding 0.5s var(--ease-out);
-}
-@media (hover: hover) {
-  .product-row:hover .product-name {
-    transform: translateX(1.25rem);
-    color: var(--accent);
-  }
-  a.product-row:hover .product-link {
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
-  }
-}
-
-/* Timeline: the line grows downward and each dot pops in turn. */
-.timeline-list::before {
-  content: '';
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 1px;
-  background: var(--line);
-  transform-origin: top;
-}
-.js .timeline .timeline-list::before {
-  transform: scaleY(0);
-  transition: transform 1.4s var(--ease-out) 0.15s;
-}
-.js .timeline.is-in .timeline-list::before {
-  transform: none;
-}
-.js .timeline .timeline-dot {
-  transform: scale(0);
-  transition: transform 0.6s var(--ease-out) calc(0.3s + var(--i) * 0.14s);
-}
-.js .timeline.is-in .timeline-dot {
-  transform: none;
-}
-.js .timeline .timeline-item {
+/* Timeline entries arrive in turn once the list is on screen. */
+.js .reveal .timeline-item {
   opacity: 0;
-  transform: translateX(-0.75rem);
+  transform: translateY(0.75rem);
   transition:
-    opacity 0.7s var(--ease-out) calc(0.25s + var(--i) * 0.14s),
-    transform 0.7s var(--ease-out) calc(0.25s + var(--i) * 0.14s);
+    opacity 0.7s var(--ease-out) calc(0.1s + var(--i) * 0.09s),
+    transform 0.7s var(--ease-out) calc(0.1s + var(--i) * 0.09s);
 }
-.js .timeline.is-in .timeline-item {
+.js .reveal.is-in .timeline-item {
   opacity: 1;
   transform: none;
-}
-
-/* Buttons lift slightly and press back down. */
-.btn {
-  transition:
-    background-color 0.2s,
-    color 0.2s,
-    border-color 0.2s,
-    transform 0.35s var(--ease-out);
-}
-@media (hover: hover) {
-  .btn:hover {
-    transform: translateY(-2px);
-  }
-}
-.btn:active {
-  transform: translateY(0) scale(0.97);
 }
 
 /* The screenshot viewer scales up from the page. */
@@ -403,6 +643,27 @@ dialog[open]::backdrop {
 @keyframes fade-in {
   from {
     opacity: 0;
+  }
+}
+
+/* The tick in the "message sent" panel draws itself. */
+.check-ring,
+.check-tick {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw 0.7s var(--ease-out) 0.1s forwards;
+}
+.check-tick {
+  animation-duration: 0.45s;
+  animation-delay: 0.55s;
+}
+
+.spinner {
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }
 
@@ -425,81 +686,98 @@ dialog[open]::backdrop {
 }
 
 /* Scroll-linked effects, in browsers that support them. */
-.scroll-progress {
-  display: none;
-}
 @supports (animation-timeline: scroll()) {
-  .scroll-progress {
-    display: block;
-    position: fixed;
-    inset: 0 0 auto 0;
-    z-index: 50;
-    height: 3px;
-    background: var(--accent);
-    transform-origin: left;
-    transform: scaleX(0);
-    animation: progress linear both;
+  /* The header's rule appears once the page has moved. */
+  .site-header {
+    animation: header-rule linear both;
     animation-timeline: scroll(root);
+    animation-range: 0 5rem;
   }
-  @keyframes progress {
-    to {
-      transform: scaleX(1);
+  @keyframes header-rule {
+    from {
+      border-bottom-color: transparent;
     }
   }
 
-  /* The terrain drifts and swells slightly as the hero scrolls away. */
-  .contour-drift {
-    animation: drift linear both;
+  /* Far ridges lag behind near ones as the hero scrolls away. */
+  .ridge-layer {
+    animation: ridge-lag linear both;
     animation-timeline: scroll(root);
-    animation-range: 0 900px;
+    animation-range: 0 100svh;
+  }
+  @keyframes ridge-lag {
+    to {
+      transform: translateY(calc(var(--lag) * 1px));
+    }
+  }
+
+  /* Screenshots drift at their own pace while they cross the screen. */
+  .drift {
+    animation: drift linear both;
+    animation-timeline: view();
+    animation-range: entry 0% exit 100%;
   }
   @keyframes drift {
+    from {
+      transform: translateY(var(--drift, 2rem));
+    }
     to {
-      transform: translateY(9rem) scale(1.12);
+      transform: translateY(calc(var(--drift, 2rem) * -1));
     }
   }
-}
 
-/* Work cards without a screenshot show the project name instead. */
-.title-tile-name {
-  font-size: clamp(2.2rem, 5.5vw, 4.25rem);
-  font-variation-settings: 'wdth' 80;
-  letter-spacing: -0.02em;
-  line-height: 1;
-  transition:
-    transform 0.6s var(--ease-out),
-    color 0.3s;
-}
-@media (hover: hover) {
-  .title-tile:hover .title-tile-name {
-    transform: scale(1.06);
-    color: var(--accent);
+  /* The timeline fills in as it is read. */
+  .timeline-fill {
+    display: block;
+    animation: timeline-fill linear both;
+    animation-timeline: view();
+    animation-range: entry 35% exit 55%;
+  }
+  @keyframes timeline-fill {
+    from {
+      transform: scaleY(0);
+    }
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .contour-line {
-    animation: none;
-    stroke-dashoffset: 0;
+  html {
+    scroll-behavior: auto;
   }
-  .letter,
-  .portrait-frame,
-  .contour-drift,
-  .scroll-progress,
+  * {
+    transition-duration: 0.01ms !important;
+  }
+  .word > span,
+  .anim-rise,
+  .ridge-layer,
+  .ridge-layer > svg,
+  .ridge-marker,
+  .ridge-marker::after,
+  .mobile-nav,
+  .mobile-nav li,
+  .drift,
+  .timeline-fill,
+  .check-ring,
+  .check-tick,
   dialog[open],
   dialog[open]::backdrop,
   ::view-transition-new(root) {
     animation: none;
   }
+  .ridge-signal,
+  .check-ring,
+  .check-tick {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+  .timeline-fill {
+    display: none;
+  }
   .js .reveal,
-  .js .reveal .shot,
-  .js .reveal .rule,
-  .js .timeline .timeline-list::before,
-  .js .timeline .timeline-dot,
-  .js .timeline .timeline-item {
+  .js .reveal.rule-row::before,
+  .js .reveal .timeline-item {
     opacity: 1;
     transform: none;
-    clip-path: none;
     transition: none;
   }
 }

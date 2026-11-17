@@ -1,0 +1,215 @@
+@import 'tailwindcss';
+
+/*
+  Palette: a survey sheet by day, a night map after dark.
+  The accent is laligurans (rhododendron) red; "water" is the blue used for links.
+*/
+:root {
+  --bg: #f2f5f1;
+  --surface: #ffffff;
+  --ink: #10221e;
+  --muted: #51645d;
+  --line: #cad6ce;
+  --contour: #a3b9ac;
+  --accent: #c4174f;
+  --on-accent: #ffffff;
+  --water: #1b5880;
+  color-scheme: light;
+}
+
+[data-theme='dark'] {
+  --bg: #0c1b1a;
+  --surface: #122624;
+  --ink: #e4eee8;
+  --muted: #93a8a0;
+  --line: #25423d;
+  --contour: #2c544c;
+  --accent: #ff6b93;
+  --on-accent: #1a0710;
+  --water: #7cc4ee;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-contour: var(--contour);
+  --color-accent: var(--accent);
+  --color-on-accent: var(--on-accent);
+  --color-water: var(--water);
+  --font-display: 'Bricolage Grotesque Variable', 'Arial Narrow', system-ui, sans-serif;
+  --font-sans: 'Instrument Sans Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-variation-settings: 'wdth' 88;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+
+  dialog::backdrop {
+    background: rgb(6 16 15 / 0.78);
+  }
+}
+
+@layer components {
+  .shell {
+    width: 100%;
+    max-width: 76rem;
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 4vw, 3rem);
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4.6vw, 3.5rem);
+    font-weight: 650;
+  }
+
+  .text-link {
+    color: var(--water);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+  }
+  .text-link:hover {
+    color: var(--accent);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3rem;
+    padding: 0.7rem 1.4rem;
+    border-radius: 999px;
+    border: 1.5px solid var(--ink);
+    font-weight: 600;
+    line-height: 1.2;
+    transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+  }
+  .btn:hover {
+    background: var(--ink);
+    color: var(--bg);
+  }
+  .btn-primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--on-accent);
+  }
+  .btn-primary:hover {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--bg);
+  }
+  .btn[disabled] {
+    opacity: 0.6;
+    cursor: progress;
+  }
+
+  .field {
+    width: 100%;
+    padding: 0.8rem 0.95rem;
+    background: var(--surface);
+    border: 1.5px solid var(--line);
+    border-radius: 0.5rem;
+    color: var(--ink);
+  }
+  .field:hover {
+    border-color: var(--muted);
+  }
+  .field:focus-visible {
+    outline-offset: 0;
+    border-color: var(--accent);
+  }
+
+  /* The contour field behind the hero, tinted by the theme. */
+  .contours {
+    background-color: var(--contour);
+    -webkit-mask: url('/images/contours.svg') center / cover no-repeat;
+    mask: url('/images/contours.svg') center / cover no-repeat;
+  }
+  .contours-fade {
+    -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent);
+    mask-image: linear-gradient(to bottom, #000 55%, transparent);
+  }
+}
+
+/* One load moment: the terrain settles in, then the name rises. */
+@keyframes terrain {
+  from {
+    opacity: 0;
+    transform: scale(1.06);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.4em);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.anim-terrain {
+  animation: terrain 1.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.anim-rise {
+  animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: var(--delay, 0s);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .anim-terrain,
+  .anim-rise {
+    animation: none;
+  }
+  * {
+    transition-duration: 0.01ms !important;
+  }
+}

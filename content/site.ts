@@ -10,9 +10,9 @@ export const site = {
   role: 'Founder and CEO of Nepse Flow Pvt. Ltd.',
   company: { name: 'Nepse Flow Pvt. Ltd.', product: 'NepseFlow', href: 'https://nepseflow.com' },
   description:
-    'Prem Prasad Khanal is the founder and CEO of Nepse Flow Pvt. Ltd. and a full-stack engineer who turns ideas into products: NepseFlow for investors, BankBI for banks, and the Pasalghar, GharGuru and KhelSpot marketplaces. On the web since 2013.',
+    'Prem Prasad Khanal is the founder and CEO of Nepse Flow Pvt. Ltd. and a full-stack and AI engineer who turns ideas into products: NepseFlow for investors, BankBI for banks, and the Pasalghar, GharGuru and KhelSpot marketplaces. On the web since 2013.',
   headline: 'I turn ideas into products that make an impact.',
-  roles: ['Founder', 'Product Builder', 'Full-Stack Engineer'],
+  roles: ['Founder', 'Product Builder', 'Full-Stack & AI Engineer'],
   intro:
     'I build digital products from the ground up — combining technology, product thinking, and business strategy to solve real-world problems. Building for the web since 2013.',
   location: {
@@ -248,7 +248,7 @@ export const work: Work[] = [
 export const about = [
   'I started as a frontend developer in 2013 and spent most of the next decade at Naxa and other Nepali companies, turning dense data into interfaces people can read: maps, survey records, drone imagery, disaster-risk plans.',
   'From 2022 to 2026 I was a senior software engineer at Danphe Software Labs, working with the US company Fluid on Liquid themes for its commerce platform.',
-  'Today I run Nepse Flow Pvt. Ltd. and work across the whole stack. NepseFlow and BankBI run on Ruby on Rails; GharGuru, Pasalghar and KhelSpot run on Django. What I care about has not changed: take a complicated problem and make the screen in front of it simple.',
+  'Today I run Nepse Flow Pvt. Ltd. and work across the whole stack. NepseFlow and BankBI run on Ruby on Rails; GharGuru, Pasalghar and KhelSpot run on Django. I build AI into the products too: Flow AI, NepseFlow’s assistant, answers investors’ questions from the platform’s own data. What I care about has not changed: take a complicated problem and make the screen in front of it simple.',
 ];
 
 /** Each area is backed by work shown on this page. */
@@ -317,6 +317,7 @@ export const toolkit = [
     group: 'Server',
     items: ['Ruby on Rails', 'Django', 'Django REST Framework', 'PostgreSQL', 'Celery', 'Redis', 'Django Channels'],
   },
+  { group: 'AI', items: ['LLM APIs', 'Tool calling', 'AI assistants'] },
   { group: 'Mobile', items: ['React Native', 'Expo'] },
   { group: 'Design and CMS', items: ['Figma', 'Adobe XD', 'WordPress'] },
   { group: 'Workflow', items: ['Git', 'GitHub', 'GitLab'] },

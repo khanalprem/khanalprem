@@ -38,14 +38,12 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#f4f6f9' },
-    { media: '(prefers-color-scheme: dark)', color: '#090f1b' },
-  ],
+  themeColor: '#090f1b',
 };
 
-// Runs before paint so the saved theme never flashes.
-const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark'){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.dataset.theme=t}catch(e){}document.documentElement.classList.add('js')})()`;
+// The site opens in the dark theme, which is also what the markup carries for
+// visitors without JavaScript. This runs before paint to restore a saved choice.
+const themeScript = `(function(){try{if(localStorage.getItem('theme')==='light')document.documentElement.dataset.theme='light'}catch(e){}document.documentElement.classList.add('js')})()`;
 
 const personId = `${site.url}/#person`;
 
@@ -88,7 +86,7 @@ const structuredData = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={plex.variable} suppressHydrationWarning>
+    <html lang="en" data-theme="dark" className={plex.variable} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />

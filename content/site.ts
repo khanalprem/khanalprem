@@ -63,6 +63,7 @@ export const work: Work[] = [
     summary:
       'Liquid storefront theme for Yoli, a nutritional supplements brand. Built with the team at Fluid.',
     kind: 'Liquid',
+    image: { src: '/work/yoli.webp', width: 1600, height: 1000 },
     href: 'https://yoli.com/',
   },
   {
@@ -71,6 +72,7 @@ export const work: Work[] = [
     summary:
       'Liquid theme for MAKE Wellness, a peptide supplements and skincare brand. Built with the team at Fluid.',
     kind: 'Liquid',
+    image: { src: '/work/make-wellness.webp', width: 1600, height: 1000 },
     href: 'https://meet.makewellness.com/?referral=MAKEshop',
   },
   {

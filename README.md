@@ -18,8 +18,8 @@ details) lives in [`content/site.ts`](content/site.ts). Components only handle
 layout.
 
 - Add a project: append to `work` and put a WebP screenshot in `public/work/`.
-- Show products in progress: fill the `building` array. The "Building now"
-  block appears only when it has entries.
+- Your own products: edit the `products` array. A product gets a link
+  only when it has an `href`.
 - Portrait: replace `public/images/prem.webp`.
 
 Colours and fonts are CSS variables at the top of `app/globals.css`.
@@ -39,9 +39,17 @@ folder.
 
 ```
 app/          layout, page, global styles, sitemap, robots
-components/   Header, Hero, WorkSection, ContactForm, ThemeToggle, LocalTime
+components/   Header, Hero, Products, WorkSection, ContactForm, Reveal, ThemeToggle, …
 content/      site.ts, the single source of content
 public/       images, icons, CNAME
 scripts/      to-docs.mjs, copies the export to docs/
 docs/         the deployed build (generated)
 ```
+
+## Motion
+
+All animation is CSS, in the "Motion" part of `app/globals.css`: the contour
+lines draw in on load, the name arrives letter by letter, sections reveal on
+scroll (`components/Reveal.tsx`), and the theme switch spreads from the toggle
+using the View Transitions API. Everything is switched off for visitors who
+ask for reduced motion.

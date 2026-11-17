@@ -2,7 +2,8 @@
 
 import Image from 'next/image';
 import { useRef, useState } from 'react';
-import { building, work, type Work, type WorkKind } from '@/content/site';
+import { work, type Work, type WorkKind } from '@/content/site';
+import Reveal from './Reveal';
 
 type Filter = 'All' | WorkKind;
 
@@ -24,13 +25,13 @@ export default function WorkSection() {
     <section id="work" className="border-b border-line py-20 md:py-28">
       <div className="shell">
         <div className="flex flex-wrap items-end justify-between gap-6">
-          <div className="max-w-2xl">
-            <h2 className="section-title">Work I’ve shipped</h2>
+          <Reveal className="max-w-2xl">
+            <h2 className="section-title">Client work I’ve shipped</h2>
             <p className="mt-4 text-lg text-muted">
               Mostly interfaces for maps and data, built with teams in Nepal for government, development and
               commercial clients.
             </p>
-          </div>
+          </Reveal>
           <div role="group" aria-label="Filter work by type" className="flex gap-1 rounded-full border border-line p-1">
             {filters.map((f) => (
               <button
@@ -46,38 +47,17 @@ export default function WorkSection() {
           </div>
         </div>
 
-        {building.length > 0 && (
-          <div className="mt-12 border border-ink p-6 md:p-8">
-            <h3 className="text-2xl font-semibold">Building now</h3>
-            <ul className="mt-5 grid gap-x-10 gap-y-5 sm:grid-cols-2 lg:grid-cols-3">
-              {building.map((b) => (
-                <li key={b.name}>
-                  <p className="font-semibold">
-                    {b.href ? (
-                      <a href={b.href} className="text-link" target="_blank" rel="noreferrer">
-                        {b.name}
-                      </a>
-                    ) : (
-                      b.name
-                    )}
-                  </p>
-                  <p className="text-muted">{b.summary}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
 
         <ul className="mt-12 grid gap-x-8 gap-y-14 md:grid-cols-2">
           {visible.map((item, i) => {
             const lead = i === 0 && filter === 'All';
             return (
-              <li key={item.slug} className={lead ? 'md:col-span-2' : undefined}>
+              <Reveal as="li" key={item.slug} delay={lead ? 0 : (i % 2) * 110} className={lead ? 'md:col-span-2' : ''}>
                 <article className={lead ? 'grid gap-6 md:grid-cols-[1.7fr_1fr] md:items-end md:gap-10' : undefined}>
                   <button
                     type="button"
                     onClick={() => openItem(item)}
-                    className="group block w-full overflow-hidden border border-line bg-surface text-left transition-colors hover:border-ink"
+                    className="shot group block w-full overflow-hidden border border-line bg-surface text-left transition-colors hover:border-ink"
                   >
                     <span className="sr-only">View a larger screenshot of {item.title}</span>
                     <Image
@@ -86,7 +66,7 @@ export default function WorkSection() {
                       width={item.image.width}
                       height={item.image.height}
                       sizes={lead ? '(min-width: 768px) 60vw, 100vw' : '(min-width: 768px) 45vw, 100vw'}
-                      className="aspect-[16/10] w-full object-cover object-left-top transition-transform duration-500 group-hover:scale-[1.03]"
+                      className="aspect-[16/10] w-full object-cover object-left-top transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                     />
                   </button>
                   <div className={lead ? '' : 'mt-5'}>
@@ -107,7 +87,7 @@ export default function WorkSection() {
                     </p>
                   </div>
                 </article>
-              </li>
+              </Reveal>
             );
           })}
         </ul>

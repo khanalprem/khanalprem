@@ -7,11 +7,12 @@ export const site = {
   url: 'https://premkhanal.com.np',
   name: 'Prem Prasad Khanal',
   shortName: 'Prem Khanal',
-  role: 'Full-stack developer',
+  role: 'CEO of Nepse Flow Pvt. Ltd.',
+  company: { name: 'Nepse Flow Pvt. Ltd.', product: 'NepseFlow', href: 'https://nepseflow.com' },
   description:
-    'Prem Prasad Khanal is a full-stack developer from Syangja, Nepal. He has built web interfaces since 2013, from national map portals to WordPress themes.',
+    'Prem Prasad Khanal is the CEO of Nepse Flow Pvt. Ltd., a senior software engineer at Danphe Software Labs, and the maker of NepseFlow, GharGuru, Pasalghar and KhelSpot. He has built for the web from Nepal since 2013.',
   intro:
-    'I build web interfaces and full-stack products from Nepal. Since 2013 that has meant national map portals, field-monitoring platforms, data dashboards and WordPress themes.',
+    'I run Nepse Flow Pvt. Ltd., where I build NepseFlow, a market intelligence platform for Nepal’s stock market, and I am a senior software engineer at Danphe Software Labs. I have been making products for the web since 2013.',
   location: {
     label: 'Syangja, Nepal',
     coordinates: '28.10° N, 83.87° E',
@@ -31,7 +32,7 @@ export const site = {
 
 export const about = [
   'I started as a frontend developer in 2013 and spent most of the years since at Naxa and other Nepali companies, turning dense data into interfaces people can read: maps, survey records, drone imagery, disaster-risk plans.',
-  'These days I work independently across the whole stack, building digital products for the Nepal market with Django, Next.js and React Native. I still care most about the same thing: taking a complicated problem and making the screen in front of it simple.',
+  'Since 2022 I have been a senior software engineer at Danphe Software Labs, working with the US company Fluid. I am also the CEO of Nepse Flow Pvt. Ltd. and build products for Nepal across the whole stack: NepseFlow for investors, GharGuru for home services, Pasalghar for online selling and KhelSpot for sports venues. I still care most about the same thing: taking a complicated problem and making the screen in front of it simple.',
 ];
 
 export type WorkKind = 'React' | 'WordPress' | 'Web';
@@ -115,14 +116,54 @@ export const work: Work[] = [
   },
 ];
 
-/**
- * Products you are building now. Anything added here appears in a
- * "Building now" block above the selected work. Leave empty to hide it.
- */
-export const building: { name: string; summary: string; href?: string }[] = [];
+export type Product = {
+  name: string;
+  summary: string;
+  /** What the product is, in two or three words. */
+  kind: string;
+  /** Shown beside the name, e.g. a role. Optional. */
+  note?: string;
+  /** Public link. Leave out until the product is live. */
+  href?: string;
+};
+
+/** Your own products, shown first on the page. */
+export const products: Product[] = [
+  {
+    name: 'NepseFlow',
+    kind: 'Stock market intelligence',
+    note: 'CEO',
+    summary:
+      'Live market data, a stock screener, portfolio tracking, broker flow and charting for investors in Nepal’s stock market.',
+    href: 'https://nepseflow.com',
+  },
+  {
+    name: 'GharGuru',
+    kind: 'Home services marketplace',
+    summary:
+      'Customers post a household job, from plumbing to cleaning, and verified providers nearby take it on.',
+  },
+  {
+    name: 'Pasalghar',
+    kind: 'Multi-vendor marketplace',
+    summary:
+      'Online selling for Nepal with zero commission on sales, in English and Nepali.',
+  },
+  {
+    name: 'KhelSpot',
+    kind: 'Sports venue booking',
+    summary: 'Find a venue, book a slot and play, with management tools for the venue’s desk.',
+  },
+];
 
 export const experience = [
-  { period: '2018 – present', org: 'Naxa Pvt. Ltd.', role: 'Senior frontend developer, part-time and full-time' },
+  { period: 'Now', org: 'Nepse Flow Pvt. Ltd.', role: 'Chief executive officer' },
+  {
+    period: '2022 – present',
+    org: 'Danphe Software Labs',
+    role: 'Senior software engineer, working with the US company Fluid',
+  },
+  { period: '2018 – 2022', org: 'Naxa Pvt. Ltd.', role: 'Senior frontend developer, part-time and full-time' },
   { period: '2018 – 2019', org: 'Rillmark Pvt. Ltd.', role: 'Senior frontend developer' },
   { period: '2018', org: 'Esignature Pvt. Ltd.', role: 'Senior frontend developer' },
   { period: '2017', org: 'Moonbao Pvt. Ltd.', role: 'Senior frontend developer' },
@@ -143,7 +184,7 @@ export const toolkit = [
   },
   {
     group: 'Server',
-    items: ['Django', 'Django REST Framework', 'PostgreSQL', 'Celery', 'Redis', 'Django Channels'],
+    items: ['Django', 'Django REST Framework', 'Ruby on Rails', 'PostgreSQL', 'Celery', 'Redis', 'Django Channels'],
   },
   { group: 'Mobile', items: ['React Native', 'Expo'] },
   { group: 'Design and CMS', items: ['Figma', 'Adobe XD', 'WordPress'] },
@@ -151,6 +192,7 @@ export const toolkit = [
 ];
 
 export const nav = [
+  { label: 'Products', href: '#products' },
   { label: 'Work', href: '#work' },
   { label: 'About', href: '#about' },
   { label: 'Journey', href: '#journey' },

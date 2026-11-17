@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { flushSync } from 'react-dom';
 
 type Theme = 'light' | 'dark';
 
@@ -11,19 +12,36 @@ export default function ThemeToggle() {
     setTheme(document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light');
   }, []);
 
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
   const toggle = () => {
     const next: Theme = theme === 'dark' ? 'light' : 'dark';
-    document.documentElement.dataset.theme = next;
-    try {
-      localStorage.setItem('theme', next);
-    } catch {
-      // Private browsing: the choice just won't persist.
+    const root = document.documentElement;
+    const apply = () => {
+      root.dataset.theme = next;
+      try {
+        localStorage.setItem('theme', next);
+      } catch {
+        // Private browsing: the choice just won't persist.
+      }
+      setTheme(next);
+    };
+
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!document.startViewTransition || reduced) return apply();
+
+    // The new theme spreads out in a circle from the button.
+    const rect = buttonRef.current?.getBoundingClientRect();
+    if (rect) {
+      root.style.setProperty('--tx', `${rect.left + rect.width / 2}px`);
+      root.style.setProperty('--ty', `${rect.top + rect.height / 2}px`);
     }
-    setTheme(next);
+    document.startViewTransition(() => flushSync(apply));
   };
 
   return (
     <button
+      ref={buttonRef}
       type="button"
       onClick={toggle}
       className="grid size-11 place-items-center rounded-full border border-line transition-colors hover:border-ink"

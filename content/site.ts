@@ -157,7 +157,7 @@ export const products: Product[] = [
 ];
 
 export const experience = [
-  { period: 'Now', org: 'Nepse Flow Pvt. Ltd.', role: 'Chief executive officer' },
+  { period: '2026 – present', org: 'Nepse Flow Pvt. Ltd.', role: 'Chief executive officer' },
   {
     period: '2022 – present',
     org: 'Danphe Software Labs',

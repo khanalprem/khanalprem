@@ -101,13 +101,6 @@ export const work: Work[] = [
     image: { src: '/work/zite.webp', width: 1400, height: 661 },
   },
   {
-    slug: 'dashy-pro',
-    title: 'Dashy Pro',
-    summary: 'A premium WordPress blog theme.',
-    kind: 'WordPress',
-    image: { src: '/work/dashy-pro.webp', width: 800, height: 600 },
-  },
-  {
     slug: 'stunning',
     title: 'Stunning Pro',
     summary: 'A premium WordPress theme for blogging sites.',
@@ -153,6 +146,19 @@ export const products: Product[] = [
     name: 'KhelSpot',
     kind: 'Sports venue booking',
     summary: 'Find a venue, book a slot and play, with management tools for the venue’s desk.',
+  },
+  {
+    name: 'Dashy',
+    kind: 'WordPress blog theme',
+    summary:
+      'A clean blog theme with masonry, grid and list layouts, for personal, magazine and lifestyle blogs.',
+    href: 'https://wordpress.org/themes/dashy/',
+  },
+  {
+    name: 'Dashy Pro',
+    kind: 'Premium WordPress theme',
+    summary:
+      'The premium edition of Dashy: Gutenberg-ready, set up through the live customizer, with WooCommerce support.',
   },
 ];
 

@@ -9,7 +9,7 @@ export default function Products() {
         <Reveal className="max-w-2xl">
           <h2 className="section-title">Products I’ve made</h2>
           <p className="mt-4 text-lg text-muted">
-            Four products for Nepal, each one built end to end.
+            Four products for Nepal, each one built end to end, and two WordPress themes.
           </p>
         </Reveal>
 
@@ -28,7 +28,7 @@ export default function Products() {
                   <span className="mt-1.5 block max-w-[30rem] text-muted">{product.summary}</span>
                   {product.href && (
                     <span className="product-link mt-3 inline-block font-medium text-water">
-                      {product.href.replace('https://', '')}
+                      {product.href.replace('https://', '').replace(/\/$/, '')}
                     </span>
                   )}
                 </span>

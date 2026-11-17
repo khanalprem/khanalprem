@@ -10,9 +10,9 @@ export const site = {
   role: 'CEO of Nepse Flow Pvt. Ltd.',
   company: { name: 'Nepse Flow Pvt. Ltd.', product: 'NepseFlow', href: 'https://nepseflow.com' },
   description:
-    'Prem Prasad Khanal is the CEO of Nepse Flow Pvt. Ltd., a senior software engineer at Danphe Software Labs, and the maker of NepseFlow, GharGuru, Pasalghar and KhelSpot. He has built for the web from Nepal since 2013.',
+    'Prem Prasad Khanal is the CEO of Nepse Flow Pvt. Ltd. and the maker of NepseFlow, GharGuru, Pasalghar and KhelSpot. He has built for the web from Nepal since 2013.',
   intro:
-    'I run Nepse Flow Pvt. Ltd., where I build NepseFlow, a market intelligence platform for Nepal’s stock market, and I am a senior software engineer at Danphe Software Labs. I have been making products for the web since 2013.',
+    'I run Nepse Flow Pvt. Ltd., where I build NepseFlow, a market intelligence platform for Nepal’s stock market. I have been making products for the web since 2013, from national map portals to marketplaces.',
   location: {
     label: 'Syangja, Nepal',
     coordinates: '28.10° N, 83.87° E',
@@ -32,7 +32,7 @@ export const site = {
 
 export const about = [
   'I started as a frontend developer in 2013 and spent most of the years since at Naxa and other Nepali companies, turning dense data into interfaces people can read: maps, survey records, drone imagery, disaster-risk plans.',
-  'Since 2022 I have been a senior software engineer at Danphe Software Labs, working with the US company Fluid. I am also the CEO of Nepse Flow Pvt. Ltd. and build products for Nepal across the whole stack: NepseFlow for investors, GharGuru for home services, Pasalghar for online selling and KhelSpot for sports venues. I still care most about the same thing: taking a complicated problem and making the screen in front of it simple.',
+  'From 2022 to 2026 I was a senior software engineer at Danphe Software Labs, working with the US company Fluid. Today I am the CEO of Nepse Flow Pvt. Ltd. and build products for Nepal across the whole stack: NepseFlow for investors, GharGuru for home services, Pasalghar for online selling and KhelSpot for sports venues. I still care most about the same thing: taking a complicated problem and making the screen in front of it simple.',
 ];
 
 export type WorkKind = 'React' | 'WordPress' | 'Web';
@@ -165,7 +165,7 @@ export const products: Product[] = [
 export const experience = [
   { period: '2026 – present', org: 'Nepse Flow Pvt. Ltd.', role: 'Chief executive officer' },
   {
-    period: '2022 – present',
+    period: '2022 – 2026',
     org: 'Danphe Software Labs',
     role: 'Senior software engineer, working with the US company Fluid',
   },

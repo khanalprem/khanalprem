@@ -106,8 +106,6 @@ export default function Hero() {
                   {site.company.product}
                 </a>
               </dd>
-              <dt className="text-muted">Also</dt>
-              <dd>Senior engineer, Danphe Software Labs</dd>
               <dt className="text-muted">Based in</dt>
               <dd>{site.location.label}</dd>
               <dt className="text-muted">Position</dt>

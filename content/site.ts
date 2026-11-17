@@ -32,7 +32,7 @@ export const site = {
 
 export const about = [
   'I started as a frontend developer in 2013 and spent most of the years since at Naxa and other Nepali companies, turning dense data into interfaces people can read: maps, survey records, drone imagery, disaster-risk plans.',
-  'From 2022 to 2026 I was a senior software engineer at Danphe Software Labs, working with the US company Fluid. Today I am the CEO of Nepse Flow Pvt. Ltd. and build products for Nepal across the whole stack: NepseFlow for investors, GharGuru for home services, Pasalghar for online selling and KhelSpot for sports venues. I still care most about the same thing: taking a complicated problem and making the screen in front of it simple.',
+  'From 2022 to 2026 I was a senior software engineer at Danphe Software Labs, working with the US company Fluid, where I built Liquid themes for its platform. Today I am the CEO of Nepse Flow Pvt. Ltd. and build products for Nepal across the whole stack: NepseFlow for investors, GharGuru for home services, Pasalghar for online selling and KhelSpot for sports venues. I still care most about the same thing: taking a complicated problem and making the screen in front of it simple.',
 ];
 
 export type WorkKind = 'React' | 'WordPress' | 'Web';
@@ -167,7 +167,7 @@ export const experience = [
   {
     period: '2022 – 2026',
     org: 'Danphe Software Labs',
-    role: 'Senior software engineer, working with the US company Fluid',
+    role: 'Senior software engineer with the US company Fluid, building Liquid themes for its platform',
   },
   { period: '2018 – 2022', org: 'Naxa Pvt. Ltd.', role: 'Senior frontend developer, part-time and full-time' },
   { period: '2018 – 2019', org: 'Rillmark Pvt. Ltd.', role: 'Senior frontend developer' },
@@ -186,7 +186,7 @@ export const education = [
 export const toolkit = [
   {
     group: 'Interface',
-    items: ['HTML', 'CSS', 'Sass', 'JavaScript', 'TypeScript', 'React', 'Next.js', 'Tailwind CSS', 'jQuery'],
+    items: ['HTML', 'CSS', 'Sass', 'JavaScript', 'TypeScript', 'React', 'Next.js', 'Tailwind CSS', 'Liquid', 'jQuery'],
   },
   {
     group: 'Server',

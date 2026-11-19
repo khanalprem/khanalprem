@@ -66,11 +66,11 @@ export default function Header() {
       <div className="shell flex h-16 items-center justify-between gap-6">
         <a
           href="#top"
-          className="flex items-center gap-2.5 py-2 text-[1.0625rem] font-semibold tracking-tight"
+          className="-ml-1.5 flex size-11 items-center justify-center"
           onClick={() => setOpen(false)}
         >
-          <Mark width={26} height={26} />
-          {site.shortName}
+          <Mark width={32} height={32} />
+          <span className="sr-only">{site.shortName}, back to top</span>
         </a>
 
         <nav aria-label="Sections" className="hidden lg:block">

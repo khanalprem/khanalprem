@@ -73,7 +73,7 @@ const structuredData = {
       name: site.name,
       alternateName: site.shortName,
       url: site.url,
-      jobTitle: 'Founder and Chief Executive Officer',
+      jobTitle: 'Founder',
       worksFor: { '@type': 'Organization', name: site.company.name, url: site.company.href },
       email: `mailto:${site.email}`,
       image: `${site.url}/images/prem.webp`,

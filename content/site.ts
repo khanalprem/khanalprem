@@ -7,10 +7,10 @@ export const site = {
   url: 'https://premkhanal.com.np',
   name: 'Prem Prasad Khanal',
   shortName: 'Prem Khanal',
-  role: 'Founder and CEO of Nepse Flow Pvt. Ltd.',
+  role: 'Founder of Nepse Flow Pvt. Ltd.',
   company: { name: 'Nepse Flow Pvt. Ltd.', product: 'NepseFlow', href: 'https://nepseflow.com' },
   description:
-    'Prem Prasad Khanal is the founder and CEO of Nepse Flow Pvt. Ltd. and a full-stack and AI engineer who turns ideas into products: NepseFlow for investors, BankBI for banks, and the Pasalghar, GharGuru and KhelSpot marketplaces. On the web since 2013.',
+    'Prem Prasad Khanal is the founder of Nepse Flow Pvt. Ltd. and a full-stack and AI engineer who turns ideas into products: NepseFlow for investors, BankBI for banks, and the Pasalghar, GharGuru and KhelSpot marketplaces. On the web since 2013.',
   headline: 'I turn ideas into products that make an impact.',
   roles: ['Founder', 'Product Builder', 'Full-Stack & AI Engineer'],
   intro:
@@ -45,7 +45,7 @@ export const flagship = {
   problem:
     'Following the Nepal Stock Exchange means stitching together prices, company financials and broker activity from many separate sites. NepseFlow puts them in one workspace built for Nepali investors.',
   role:
-    'Founder and CEO of Nepse Flow Pvt. Ltd. I designed and built the product myself: the Rails API and data pipeline, the Next.js web app and a React Native app.',
+    'Founder of Nepse Flow Pvt. Ltd. I designed and built the product myself: the Rails API and data pipeline, the Next.js web app and a React Native app.',
   capabilities: [
     {
       title: 'Live market data',
@@ -281,14 +281,14 @@ export const expertise = [
   {
     title: 'Product strategy',
     detail:
-      'As founder and CEO of Nepse Flow I decide what gets built, how it is priced and when it ships. NepseFlow runs on four subscription plans, from free to advanced.',
+      'As founder of Nepse Flow I decide what gets built, how it is priced and when it ships. NepseFlow runs on four subscription plans, from free to advanced.',
   },
 ];
 
 export type Entry = { period: string; org: string; role: string };
 
 export const experience: Entry[] = [
-  { period: '2026 – present', org: 'Nepse Flow Pvt. Ltd.', role: 'Founder and chief executive officer' },
+  { period: '2026 – present', org: 'Nepse Flow Pvt. Ltd.', role: 'Founder' },
   {
     period: '2022 – 2026',
     org: 'Danphe Software Labs',

@@ -53,7 +53,7 @@ export default function Hero() {
           <div>
             <dt className="text-muted">Now</dt>
             <dd>
-              Founder and CEO,{' '}
+              Founder,{' '}
               <a href={site.company.href} className="ext text-link" target="_blank" rel="noreferrer">
                 {site.company.name}
                 <ArrowUpRight className="ml-0.5 inline-block align-[-0.1em]" />

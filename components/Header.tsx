@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { nav, site } from '@/content/site';
-import { Close, Menu } from './Icons';
+import { Close, Mark, Menu } from './Icons';
 import ThemeToggle from './ThemeToggle';
 
 export default function Header() {
@@ -64,7 +64,12 @@ export default function Header() {
   return (
     <header className="site-header">
       <div className="shell flex h-16 items-center justify-between gap-6">
-        <a href="#top" className="py-2 text-[1.0625rem] font-semibold tracking-tight" onClick={() => setOpen(false)}>
+        <a
+          href="#top"
+          className="flex items-center gap-2.5 py-2 text-[1.0625rem] font-semibold tracking-tight"
+          onClick={() => setOpen(false)}
+        >
+          <Mark width={26} height={26} />
           {site.shortName}
         </a>
 

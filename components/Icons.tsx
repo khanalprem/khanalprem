@@ -21,6 +21,24 @@ function Icon({ children, ...props }: IconProps & { children: ReactNode }) {
   );
 }
 
+// The PK monogram. The K's rising arm takes the accent; the rest follows the text colour.
+export const Mark = (props: IconProps) => (
+  <svg
+    width="1em"
+    height="1em"
+    viewBox="8 8 48 48"
+    fill="none"
+    strokeWidth="6"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+    {...props}
+  >
+    <path d="M38 34 51 16" stroke="var(--accent)" />
+    <path d="M14 47V17h6.5a8.5 8.5 0 0 1 0 17H14M38 17v30M39.5 33.5 50 47" stroke="currentColor" />
+  </svg>
+);
+
 export const ArrowDown = (props: IconProps) => (
   <Icon {...props}>
     <path d="M12 5v14M6 13l6 6 6-6" />

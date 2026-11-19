@@ -16,7 +16,6 @@
   --accent-strong: #a31041;
   --on-accent: #ffffff;
   --link: #1c4e96;
-  --danger: #b3261e;
   --ridge: #5d7699;
   --snow: #ffffff;
   --shadow: 0 1px 2px rgb(13 22 38 / 0.06), 0 18px 40px -18px rgb(13 22 38 / 0.28);
@@ -36,7 +35,6 @@
   --accent-strong: #ff8aa9;
   --on-accent: #1a0710;
   --link: #8fbcf5;
-  --danger: #ff8a80;
   --ridge: #8ea6cc;
   --snow: rgb(222 231 246 / 0.78);
   --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 22px 48px -18px rgb(0 0 0 / 0.7);
@@ -53,7 +51,6 @@
   --color-accent: var(--accent);
   --color-on-accent: var(--on-accent);
   --color-link: var(--link);
-  --color-danger: var(--danger);
   --font-sans: var(--font-plex), system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
 
@@ -186,39 +183,9 @@
     background: var(--accent-strong);
     border-color: var(--accent-strong);
   }
-  .btn[disabled] {
-    opacity: 0.65;
-    cursor: progress;
-  }
   .btn svg {
     flex: none;
     transition: transform 0.35s var(--ease-out);
-  }
-
-  .field {
-    width: 100%;
-    padding: 0.8rem 0.95rem;
-    background: var(--surface);
-    border: 1px solid var(--line-strong);
-    border-radius: 0.6rem;
-    color: var(--ink);
-    transition:
-      border-color 0.2s,
-      box-shadow 0.2s;
-  }
-  .field:hover {
-    border-color: var(--muted);
-  }
-  .field:focus-visible {
-    outline: none;
-    border-color: var(--link);
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--link) 22%, transparent);
-  }
-  .field[aria-invalid='true'] {
-    border-color: var(--danger);
-  }
-  .field[aria-invalid='true']:focus-visible {
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--danger) 22%, transparent);
   }
 
   /* A screenshot in its frame. */
@@ -646,27 +613,6 @@ dialog[open]::backdrop {
   }
 }
 
-/* The tick in the "message sent" panel draws itself. */
-.check-ring,
-.check-tick {
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  animation: draw 0.7s var(--ease-out) 0.1s forwards;
-}
-.check-tick {
-  animation-duration: 0.45s;
-  animation-delay: 0.55s;
-}
-
-.spinner {
-  animation: spin 0.8s linear infinite;
-}
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 /* Theme switch: the new theme spreads out from the toggle button. */
 ::view-transition-old(root),
 ::view-transition-new(root) {
@@ -757,16 +703,12 @@ dialog[open]::backdrop {
   .mobile-nav li,
   .drift,
   .timeline-fill,
-  .check-ring,
-  .check-tick,
   dialog[open],
   dialog[open]::backdrop,
   ::view-transition-new(root) {
     animation: none;
   }
-  .ridge-signal,
-  .check-ring,
-  .check-tick {
+  .ridge-signal {
     animation: none;
     stroke-dashoffset: 0;
   }

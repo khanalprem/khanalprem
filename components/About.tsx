@@ -12,7 +12,7 @@ export default function About() {
             <div className="frame mt-8 w-full max-w-[17rem] lg:mt-12">
               <Image
                 src="/images/prem.webp"
-                alt="Prem Prasad Khanal standing on a lawn in front of pine trees"
+                alt="Portrait of Prem Prasad Khanal in a plum suit jacket and glasses"
                 width={600}
                 height={750}
                 sizes="17rem"

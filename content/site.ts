@@ -22,8 +22,6 @@ export const site = {
   },
   startedYear: 2013,
   email: 'khnl.prem@gmail.com',
-  // Formspree endpoint carried over from the previous site.
-  formEndpoint: 'https://formspree.io/f/xbjwnkkw',
   social: [
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/prem-prasad-khanal-6115b115a/' },
     { label: 'GitHub', href: 'https://github.com/khanalprem' },

@@ -1,5 +1,4 @@
 import { site } from '@/content/site';
-import ContactForm from './ContactForm';
 import CopyButton from './CopyButton';
 import { ArrowUpRight } from './Icons';
 import Reveal from './Reveal';
@@ -14,8 +13,10 @@ export default function Contact() {
             Partnerships, questions about a product, or a project you’d like to talk through. I read everything and
             reply by email.
           </p>
+        </Reveal>
 
-          <dl className="mt-10">
+        <Reveal delay={150} className="lg:pt-3">
+          <dl>
             <div className="rule-row py-5">
               <dt className="text-[0.9375rem] text-muted">Email</dt>
               <dd className="mt-1 flex flex-wrap items-center gap-3">
@@ -44,10 +45,6 @@ export default function Contact() {
               </dd>
             </div>
           </dl>
-        </Reveal>
-
-        <Reveal delay={150} className="lg:pt-3">
-          <ContactForm />
         </Reveal>
       </div>
     </section>
